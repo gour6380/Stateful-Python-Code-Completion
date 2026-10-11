@@ -1,5 +1,7 @@
 # Stateful Python Code Completion
 
+Repository: [gour6380/Stateful-Python-Code-Completion](https://github.com/gour6380/Stateful-Python-Code-Completion)
+
 A notebook-controlled PyTorch experiment in **exact KV-cache reuse, bounded attention-sink caching and editor-session correctness**. It trains a small Python completion model from scratch, then compares quality, latency, memory and recovery across three cache policies.
 
 **Main result:** sink caching made a fixed 32-token warm continuation approximately **4× faster** after a 1,024-position cache filled on an M2 Pro. That benefit came with a **2.55% increase in streaming perplexity**, weak line completion and substantial edit-path regressions. It is a measured systems tradeoff, not a production-readiness claim.
@@ -49,7 +51,14 @@ The author's original environment and raw/prepared/encoded data were deliberatel
 
 The recorded environment was native **arm64 Python 3.13.15**, PyTorch 2.14.0 and macOS on an M2 Pro with 16 GB unified memory. This lock was resolved on macOS. Linux/CUDA installation has not been validated; Windows is unsupported by the current POSIX file-lock implementation. Device selection in the code is MPS → CUDA → CPU, without silent operation fallback.
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) first. Open a terminal in the project directory you downloaded or cloned—the folder containing this README and `src/`—then run:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) first. Clone the repository using your configured GitHub SSH key:
+
+```bash
+git clone git@github.com:gour6380/Stateful-Python-Code-Completion.git
+cd Stateful-Python-Code-Completion
+```
+
+If you already have a local checkout, open a terminal in that project directory instead. From the folder containing this README and `src/`, run:
 
 ```bash
 uv python install 3.13.15
