@@ -1,0 +1,334 @@
+{
+  "checksums": "checksums.json",
+  "current_source_copy_verification": {
+    "mismatches": 0,
+    "original_manifest_entries_compared": 24,
+    "scope": "Only original-run files used by this export; the historical full-run verification is separately recorded in evidence/integrity.json."
+  },
+  "excluded": [
+    "Raw/normalized/encoded datasets",
+    "Per-case source, target, prediction and token traces",
+    "Session-recovery text",
+    "Model weights and optimizer/recovery snapshots",
+    "TensorBoard events and verbose logs",
+    "Machine-local absolute paths and host-specific file names",
+    "Private program checklists and internal release planning"
+  ],
+  "exports": {
+    "README.md": {
+      "sources": [
+        "docs/results.md"
+      ],
+      "transformation": "Adapted links and program-specific framing for sharing; retained measured values/limitations; clarified historical versus public integrity, omitted undistributed row links and added original figure/table index."
+    },
+    "architecture.json": {
+      "sources": [
+        "runs/run_001/checkpoints/export_c6d037b901634405a4b14281077c32fb/best/architecture.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "configuration.json": {
+      "sources": [
+        "runs/run_001/config/experiment.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "evidence/acceptance.json": {
+      "sources": [
+        "runs/run_001/environment/acceptance_tests.json"
+      ],
+      "transformation": "Removed machine-local interpreter and undistributed console/JUnit paths. Original receipt hash is identified as historical; counts/status unchanged."
+    },
+    "evidence/correctness.json": {
+      "sources": [
+        "docs/results_summary.json"
+      ],
+      "transformation": "Retained aggregate correctness and replay outcomes; omitted case rows and local interpreter details."
+    },
+    "evidence/data_audit.json": {
+      "sources": [
+        "runs/run_001/evaluation/data_audit.json"
+      ],
+      "transformation": "Removed per-repository names and distributions; retained aggregate counts, exclusion counts, clone limitations and selection protocol."
+    },
+    "evidence/device_confirmation.json": {
+      "sources": [
+        "docs/validation_audit/device_confirmation.json"
+      ],
+      "transformation": "Retained aggregate device agreement and original hashes; removed links to undistributed case/CPU receipts; canonical MPS aggregate retained."
+    },
+    "evidence/environment.json": {
+      "sources": [
+        "runs/run_001/environment/identity.json"
+      ],
+      "transformation": "Removed the machine-local interpreter path; recorded package/platform versions unchanged."
+    },
+    "evidence/integrity.json": {
+      "sources": [
+        "docs/handoff_verification.json",
+        "runs/run_001/report/artifact_checksums.json"
+      ],
+      "transformation": "Historical aggregate integrity receipt; omits private/full manifest paths and clearly separates the public export manifest."
+    },
+    "evidence/runtime_validation.json": {
+      "sources": [
+        "runs/run_001/environment/runtime_validation.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "evidence/training_status.json": {
+      "sources": [
+        "runs/run_001/checkpoints/status.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "evidence/training_timing.json": {
+      "sources": [
+        "runs/run_001/logs/performance/05cfdadccb80413ba46c551e43747f42.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/completion_quality.png": {
+      "sources": [
+        "runs/run_001/figures/completion_quality.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/engine_latency.png": {
+      "sources": [
+        "runs/run_001/figures/engine_latency.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/http_latency.png": {
+      "sources": [
+        "runs/run_001/figures/http_latency.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/learning_curves.png": {
+      "sources": [
+        "runs/run_001/figures/learning_curves.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/memory_snapshots.png": {
+      "sources": [
+        "runs/run_001/figures/memory_snapshots.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/prediction_quality.png": {
+      "sources": [
+        "runs/run_001/figures/prediction_quality.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/retained_kv_memory.png": {
+      "sources": [
+        "runs/run_001/figures/retained_kv_memory.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "figures/streaming_quality.png": {
+      "sources": [
+        "runs/run_001/figures/streaming_quality.png"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "metrics/line.json": {
+      "sources": [
+        "runs/run_001/evaluation/line_metrics.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "metrics/streaming.json": {
+      "sources": [
+        "runs/run_001/evaluation/streaming_metrics.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "metrics/token.json": {
+      "sources": [
+        "runs/run_001/evaluation/token_metrics.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "metrics/validation_audit.json": {
+      "sources": [
+        "docs/validation_audit/mps/summary.json"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "summary.json": {
+      "sources": [
+        "docs/results_summary.json"
+      ],
+      "transformation": "Preserved numerical aggregate results/configuration/identities; removed private and undistributed artifact references; rewired links to portable evidence; distinguished historical/public receipt hashes."
+    },
+    "tables/engine_summary.csv": {
+      "sources": [
+        "runs/run_001/report/engine_summary.csv"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "tables/epochs.csv": {
+      "sources": [
+        "runs/run_001/logs/epochs.csv"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "tables/http_summary.csv": {
+      "sources": [
+        "runs/run_001/report/http_summary.csv"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "tables/restart_summary.csv": {
+      "sources": [
+        "runs/run_001/report/restart_summary.csv"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    },
+    "tables/startup_measurements.csv": {
+      "sources": [
+        "runs/run_001/report/startup_measurements.csv"
+      ],
+      "transformation": "Byte-identical copy of an aggregate artifact; no case or source text."
+    }
+  },
+  "limitations": [
+    "This aggregate evidence export supports inspection; it is not sufficient to regenerate the trained weights or reproduce per-case outcomes without separately acquiring data and training.",
+    "Original environment and data caches were removed after the experiment.",
+    "Historical acceptance/parity receipts are not newly executed tests of this sharing preparation."
+  ],
+  "numerical_policy": "Copied recorded values without recomputing learned scores or rerunning model/benchmark code. Display rounding is unchanged from the local interpretation.",
+  "original_frozen_source_sha256": "f14ab1aa7b9b9132161ed7c20ef466f88f9e9c2a61bb01839c2a92b42f048c47",
+  "original_run": "run_001",
+  "prepared_on": "2026-10-11",
+  "purpose": "Portable sharing evidence for Stateful Python Code Completion; no new scientific execution.",
+  "schema": 1,
+  "source_paths_note": "Paths under sources are historical project-relative provenance identifiers, not promised public-export files or hyperlinks. No machine-local absolute paths are included.",
+  "sources": {
+    "docs/handoff_verification.json": {
+      "bytes": 2261,
+      "sha256": "8bc2e396424f4eb61596c22d7724ae7fcaac3b1eef4838d09f25ff8f58d012e9"
+    },
+    "docs/results.md": {
+      "bytes": 18682,
+      "sha256": "df62c611578d3755e89fcb331461c56f25af10e6c865cf904d45efb6c1d75d1c"
+    },
+    "docs/results_summary.json": {
+      "bytes": 149010,
+      "sha256": "1568fb6f55ed3bbba2a751ec32e816cbc71b2e4cbf04688ee166003baea45c30"
+    },
+    "docs/validation_audit/device_confirmation.json": {
+      "bytes": 1362,
+      "sha256": "ed26475f71a9a3c44ed3fa3ae8d47b88258316e28804c86eac2eb32527be15ef"
+    },
+    "docs/validation_audit/mps/summary.json": {
+      "bytes": 6286,
+      "sha256": "c985a9b50edcf95ce006e24de9913cd46934d5a7c910958caa71a3105491ba4e"
+    },
+    "runs/run_001/checkpoints/export_c6d037b901634405a4b14281077c32fb/best/architecture.json": {
+      "bytes": 1589,
+      "sha256": "42a8155bbb76795a3700a900d1cc97ea641ea64b5d4ecacea5cf4b9983efa288"
+    },
+    "runs/run_001/checkpoints/status.json": {
+      "bytes": 405,
+      "sha256": "7a6d93dd5f35f0ceef687187b1d48bfa9838ee70301f4c63d1951b9c6c60c330"
+    },
+    "runs/run_001/config/experiment.json": {
+      "bytes": 1198,
+      "sha256": "d2b6de10f15c66824b38f94692b7f92b01f2391cc82d27b10446113a287b70a0"
+    },
+    "runs/run_001/environment/acceptance_tests.json": {
+      "bytes": 913,
+      "sha256": "2077b75def74ef6c01fd0ef7ffbda66a1faf1b4f95db56128b9dc19bcf154c71"
+    },
+    "runs/run_001/environment/identity.json": {
+      "bytes": 3992,
+      "sha256": "020e1ba03bc9037068e11ccea4d0d77b26fc6b46c2d0e96d7ed41f2b7900a8c1"
+    },
+    "runs/run_001/environment/runtime_validation.json": {
+      "bytes": 3726,
+      "sha256": "df7f5c16ee2ca5e957a501419a9988da36f58e18c135986e27ffc8f45457dc3c"
+    },
+    "runs/run_001/evaluation/data_audit.json": {
+      "bytes": 100072,
+      "sha256": "c5bb9afc99e3dbc7dfabec1dfe914c39ba2cfa84fafaa735507ad8095d69411d"
+    },
+    "runs/run_001/evaluation/line_metrics.json": {
+      "bytes": 3074,
+      "sha256": "3a826804dbaa294323a527696925a9dabb079e237f5017b3b17dae7fb6d86b6f"
+    },
+    "runs/run_001/evaluation/streaming_metrics.json": {
+      "bytes": 8418,
+      "sha256": "ee797c7aa991b089c4f427dbd2da7ad80d81119bb34fa359b1ed855b21625944"
+    },
+    "runs/run_001/evaluation/token_metrics.json": {
+      "bytes": 4749,
+      "sha256": "ee22aa91eb09317425d4b566c2cdd7859f07c557935081cdb1c556c0bcf7e425"
+    },
+    "runs/run_001/figures/completion_quality.png": {
+      "bytes": 30123,
+      "sha256": "a94b515cd2afca457dc234a48e07dc58b436da8469a514c286736df9e1342a65"
+    },
+    "runs/run_001/figures/engine_latency.png": {
+      "bytes": 155026,
+      "sha256": "0ab68487748eeb7313065a8a7ae7af9d2b7a973e9322820af71c69cdab239ba4"
+    },
+    "runs/run_001/figures/http_latency.png": {
+      "bytes": 359718,
+      "sha256": "4b67067f263b34ecd62be7872c8f9ae843c37e2c06dd6d53ecfc665ac48d1578"
+    },
+    "runs/run_001/figures/learning_curves.png": {
+      "bytes": 68013,
+      "sha256": "3cb65c37d16b6f23228b7b5bc60cd5bb220da284855737f624462ec723a2fbb1"
+    },
+    "runs/run_001/figures/memory_snapshots.png": {
+      "bytes": 69129,
+      "sha256": "6c2114a16f3f45092f41420ae7761bbe9b7ce886c9de4fb9c231862b26509e79"
+    },
+    "runs/run_001/figures/prediction_quality.png": {
+      "bytes": 40824,
+      "sha256": "b1842058df61c4fc1a61516865aaa67e373e90c9ce8384ebe2d0a5e58d480e63"
+    },
+    "runs/run_001/figures/retained_kv_memory.png": {
+      "bytes": 66240,
+      "sha256": "ce991b52ea2ccc86f300bab58d1bc0e3ccb8b34798cc83a8f84d07be7e22989b"
+    },
+    "runs/run_001/figures/streaming_quality.png": {
+      "bytes": 102167,
+      "sha256": "f4eb140349ee7b08ce2e7cfdda09d5490d0a088a4baeed6d351d90293e84525f"
+    },
+    "runs/run_001/logs/epochs.csv": {
+      "bytes": 1897,
+      "sha256": "9c414444219927f907dac51456ceb7923405cf5121f9a65e8782e20ae94009bf"
+    },
+    "runs/run_001/logs/performance/05cfdadccb80413ba46c551e43747f42.json": {
+      "bytes": 8832,
+      "sha256": "785a82d90e414ecd15f66df0fcd232972b7d4cc6832c561be6370646ddaa4e1a"
+    },
+    "runs/run_001/report/artifact_checksums.json": {
+      "bytes": 12136,
+      "sha256": "98b9b2aa1875b8917e5ccb2da8b992190d75ffc9709fd7719dc4a802df7d4090"
+    },
+    "runs/run_001/report/engine_summary.csv": {
+      "bytes": 29374,
+      "sha256": "559f3729a193a60e2ecd942b7df105cca0663b8011f855166bbc78267c193a6d"
+    },
+    "runs/run_001/report/http_summary.csv": {
+      "bytes": 23339,
+      "sha256": "3b528ad74cb81e1c06f2e367b542767b5c7fa0d33f007ccaeac028f2eb0b0501"
+    },
+    "runs/run_001/report/restart_summary.csv": {
+      "bytes": 7385,
+      "sha256": "4c99b7a1752f5a1e129b588269662d26f8fc88541fc3bf4aa914db28899e9c3f"
+    },
+    "runs/run_001/report/startup_measurements.csv": {
+      "bytes": 12789,
+      "sha256": "5790d38995db09fb70d7e06ee78f7e4640e8abbdf19a58400f23ae9deb806be7"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "available_test_files": 15937,
+  "case_panel_sha256": "bfa39e98d6c605b791780533158078dd9d61c045315a853e558790233e91c9f9",
+  "cases": 5000,
+  "checkpoint": {
+    "architecture": "90cb14277025a55501c448b4464abcedd2e0a7745691304fd589387538cfd8fa",
+    "run_identity": {
+      "config_hash": "85766ce6996d314050eb1a28d42c5ea404c3776d4656897d6979885712945633",
+      "environment_hash": "ddf4858df8d48c18a5353b712480f649ac1164110d31877ebe2ba908d92cafbf",
+      "notebook_snapshot_hash": "870274137ffc1302f60c6d753b226fd80fa97df7830346e88ced2a102c3770ee",
+      "run": "run_001",
+      "runs_directory": "runs",
+      "schema": 1,
+      "source_hash": "f14ab1aa7b9b9132161ed7c20ef466f88f9e9c2a61bb01839c2a92b42f048c47"
+    },
+    "schema": 1,
+    "tokenizer": {
+      "cache_id": "78d0032ae0e50caea5c64b1b7f4185147325a4b088332171fb58d247c0b67263",
+      "data": {
+        "cache_id": "8fd43d116d66d7c67547b3ed24f26a970c3c2d74514be1251b563ff0a97171b2",
+        "inventory": "61972d361cfe8aa79b1e3a2e91739e5826697ee42efe76edb34cb1e3d0c3ac04",
+        "parent": {
+          "cache_id": "0bf59e5e72e3d42dfba262a3c26f2f169e869e504053c86e3a7d8465b6beafc7",
+          "inventory": "7d15d652a471fe0ce9a8e735d21eb6c25c0920ee825904a6a97de78db42182a3",
+          "protocol": "py150-python313-repository-clones-v1"
+        },
+        "protocol": "py150-python313-repository-clones-v1"
+      },
+      "fit_split": "train",
+      "fitted_file_ids_sha256": "ea2d35fbaa51b77e456a0ce52cb0e344f8600e78d797a607b6a91894d0e3feec",
+      "implementation": {
+        "source_sha256": "6369dc035a2de97317c2d16394370e46e4aad88db92d8c18e2c725abd5f2a402",
+        "tokenizers": "0.23.2"
+      },
+      "protocol": "python-byte-bpe-v1",
+      "sha256": "6dd342eb6a1ddf9bf523954d320c5e81b41752d123a369485a9cf6c6a173b354",
+      "special_ids": {
+        "<|bos|>": 1,
+        "<|eos|>": 2,
+        "<|pad|>": 0,
+        "<|unk|>": 3
+      },
+      "vocab_size": 8192
+    },
+    "weights_sha256": "7b6dc503a3e6820cd0ff82dd80b0565f97bae8f9f876cdf62fa2012c96416825"
+  },
+  "failure_counts": {
+    "empty_suggestion": 1342,
+    "identifier_mismatch": 609,
+    "indentation_mismatch": 4032,
+    "other_text_mismatch": 622,
+    "premature_eos": 1342,
+    "repetitive_output": 34,
+    "truncation": 61
+  },
+  "limitation": "Text continuation scores do not establish functional correctness; no generated code was executed.",
+  "metrics": {
+    "baseline_edit_similarity": 0.291588562184432,
+    "baseline_exact_match": 0.0004,
+    "edit_similarity": 0.0967062761645802,
+    "exact_match": 0.0174
+  },
+  "protocol": {
+    "generated_source_execution": false,
+    "generation_max_tokens": 64,
+    "line_limit": 5000,
+    "line_max_target_tokens": 64,
+    "line_min_prefix_tokens": 64,
+    "line_scoring": "literal physical line including existing newline and indentation",
+    "split": "test",
+    "stream_file_limit": 128,
+    "stream_max_tokens": 4096,
+    "stream_min_tokens": 1026,
+    "stream_score_stride": 32,
+    "unigram_smoothing": 1.0,
+    "version": "prediction-only-v1"
+  },
+  "requested_cases": 5000
+}

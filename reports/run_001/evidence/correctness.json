@@ -1,0 +1,34 @@
+{
+  "acceptance": {
+    "aggregate_receipt": "acceptance.json",
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 194
+    },
+    "returncode": 0,
+    "status": "passed"
+  },
+  "restart_greedy_matches": 900,
+  "restart_measured_checks": 900,
+  "restart_replay_passed": true,
+  "runtime_validation": {
+    "aggregate_receipt": "runtime_validation.json",
+    "status": "passed"
+  },
+  "trained_parity": {
+    "atol": 0.0003,
+    "cases": 36,
+    "exact_max_abs_logit_delta": 2.288818359375e-05,
+    "greedy_disagreements": 0,
+    "qualified": {
+      "exact": true,
+      "sink": true,
+      "stateless": true
+    },
+    "rtol": 0,
+    "sink_reference_greedy_disagreements": 0,
+    "sink_reference_max_abs_logit_delta": 1.239776611328125e-05
+  }
+}

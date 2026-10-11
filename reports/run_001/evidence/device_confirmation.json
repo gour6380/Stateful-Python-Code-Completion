@@ -1,0 +1,20 @@
+{
+  "canonical_public_receipt": "../metrics/validation_audit.json",
+  "case_lists_identical": true,
+  "category_overlap": "newline_only is a subset of whitespace_only_nonempty; do not add them.",
+  "decoder_bug_proven": false,
+  "device_confirmation_only": true,
+  "exact_teacher_context_cases": 8,
+  "finding": "Full-source versus accepted-prefix BPE histories differ in 56 of 64 validation cases; this is a verified boundary mismatch. Its causal contribution and a remedy remain untested.",
+  "greedy_text_token_ids_and_stop_reasons_identical": 64,
+  "newline_only_among_exact_teacher_context_cases": 4,
+  "no_decoding_or_model_changes_between_devices": true,
+  "original_receipt_hashes": {
+    "cpu_cases_sha256": "774552e2ba50dced99f4a823e23a4211f898fa38b03b4dbada248357927f562f",
+    "cpu_summary_sha256": "34be03d258143b08b7aff4619e416110a114b073fa5a13f49508324b1c33d421",
+    "mps_cases_sha256": "8a1b4767d0843d3023f2b84cfcc239c70f8ca852b791856dd25a5f71f255b4f6",
+    "mps_summary_sha256": "c985a9b50edcf95ce006e24de9913cd46934d5a7c910958caa71a3105491ba4e"
+  },
+  "probability_definition": "Unmasked model softmax. Greedy selection suppresses PAD/BOS/UNK; EOS remains allowed.",
+  "same_context_caveat": "Full-source teacher contexts and targets can differ from deployment contexts; first-token correctness is not a repaired line-completion result."
+}

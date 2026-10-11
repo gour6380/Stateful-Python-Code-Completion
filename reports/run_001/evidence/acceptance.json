@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 194
+  },
+  "identity": {
+    "run": {
+      "config_hash": "85766ce6996d314050eb1a28d42c5ea404c3776d4656897d6979885712945633",
+      "environment_hash": "ddf4858df8d48c18a5353b712480f649ac1164110d31877ebe2ba908d92cafbf",
+      "notebook_snapshot_hash": "870274137ffc1302f60c6d753b226fd80fa97df7830346e88ced2a102c3770ee",
+      "run": "run_001",
+      "runs_directory": "runs",
+      "schema": 1,
+      "source_hash": "f14ab1aa7b9b9132161ed7c20ef466f88f9e9c2a61bb01839c2a92b42f048c47"
+    }
+  },
+  "original_receipt_hash": "61bc5eae0e28dcace15f27dc0feee100ae771e8b5415438e8c5f7592aebbb873",
+  "returncode": 0,
+  "schema": 1,
+  "status": "passed"
+}

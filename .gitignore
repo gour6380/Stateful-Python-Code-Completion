@@ -1,0 +1,57 @@
+# Environments and Python/tool caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Local configuration, credentials and editor files
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+.DS_Store
+.AppleDouble
+.idea/
+.vscode/
+*.swp
+*~
+
+# Downloaded source, derived datasets and fitted tokenizer caches
+/data/**
+!/data/raw/
+!/data/raw/.gitkeep
+
+# Full experiments, checkpoints, sessions and measurement logs
+/runs/**
+!/runs/.gitkeep
+/benchmarks/
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.npz
+*.log
+events.out.tfevents.*
+.accelerator.lock
+
+# The original executed notebook is intentionally eligible for tracking unchanged.
+
+# Private historical receipts contain local paths or third-party source excerpts.
+# Curated public evidence belongs in reports/, not in the ignored full runs.
+/docs/*
+!/docs/sequence-systems.md
+!/docs/sharing.md
+/private-drafts/
+/release/
+/tmp/
+*.tmp

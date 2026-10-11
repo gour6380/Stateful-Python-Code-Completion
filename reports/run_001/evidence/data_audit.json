@@ -1,0 +1,45 @@
+{
+  "clone_edges": 811,
+  "clone_edges_parent_cache_id": "0bf59e5e72e3d42dfba262a3c26f2f169e869e504053c86e3a7d8465b6beafc7",
+  "clone_limit": "Deterministic MinHash candidate retrieval can miss near duplicates; candidates verified with exact Jaccard.",
+  "eligible_split_counts": {
+    "test": 15937,
+    "train": 84812,
+    "validation": 8768
+  },
+  "exclusions": {
+    "encoding_or_python313_parse": 13133,
+    "exact_duplicate": 18,
+    "license": 1072,
+    "near_duplicate": 376,
+    "no_lexical_tokens": 392
+  },
+  "inherited_global_audit": "Manifest/eligible counts, exclusions, clone edges and split method are inherited from the verified full parent; no parsing or clone detection was repeated.",
+  "manifest_files": 124508,
+  "parent_available_counts": {
+    "test": 15937,
+    "train": 20000,
+    "validation": 8768
+  },
+  "parent_identity": {
+    "cache_id": "0bf59e5e72e3d42dfba262a3c26f2f169e869e504053c86e3a7d8465b6beafc7",
+    "inventory": "7d15d652a471fe0ce9a8e735d21eb6c25c0920ee825904a6a97de78db42182a3",
+    "protocol": "py150-python313-repository-clones-v1"
+  },
+  "preparation_mode": "subset_view",
+  "repositories_by_split": {
+    "test": 785,
+    "train": 1932,
+    "validation": 345
+  },
+  "requested_training_files": 5000,
+  "requested_validation_files": 1000,
+  "selected_counts": {
+    "test": 15937,
+    "train": 5000,
+    "validation": 1000
+  },
+  "selection_rule": "Within unchanged parent repository/clone partitions, retain the SHA256(seed:file_id) prefix for each requested train/validation count and every eligible test file.",
+  "source_texts": "Referenced in the verified parent; no source text files copied or created.",
+  "split_method": "SHA256(seed:connected-component canonical repository), thresholds .8/.9; approximate file proportions"
+}

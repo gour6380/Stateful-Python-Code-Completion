@@ -1,0 +1,61 @@
+{
+  "data": {
+    "clone_threshold": 0.9,
+    "minhash_permutations": 128,
+    "seed": 42,
+    "shingle_size": 5,
+    "training_files": 5000,
+    "validation_files": 1000,
+    "vocab_size": 8192
+  },
+  "model": {
+    "context_length": 1024,
+    "dropout": 0.1,
+    "ff_width": 1536,
+    "heads": 8,
+    "layers": 8,
+    "norm_eps": 1e-05,
+    "rope_base": 10000.0,
+    "vocab_size": 8192,
+    "width": 512
+  },
+  "service": {
+    "budgets": [
+      256,
+      512,
+      1024
+    ],
+    "deadline_seconds": 120.0,
+    "host": "127.0.0.1",
+    "max_new_tokens": 64,
+    "max_sessions": 4,
+    "max_source_bytes": 1048576,
+    "port": 8000,
+    "queue_size": 8,
+    "sink_tokens": 4
+  },
+  "training": {
+    "accumulation_steps": 8,
+    "batch_size": 4,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_interval": 100,
+    "cpu_threads": 6,
+    "eps": 1e-08,
+    "gradient_clip": 1.0,
+    "learning_rate": 0.0003,
+    "max_epochs": 15,
+    "min_delta": 0.0001,
+    "min_epochs": 5,
+    "min_learning_rate": 3e-05,
+    "num_workers": 0,
+    "patience": 3,
+    "prefer_metal": true,
+    "seed": 42,
+    "validation_batch_size": 16,
+    "warmup_fraction": 0.05,
+    "weight_decay": 0.1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "historical_review": {
+    "live_scientific_source_dependency_matches_at_review": 33,
+    "notebook_sha256_at_review": "c2a91dc900969ad98b6f4f3a4d5409bf47c3390b9dd26de2e46349f9f9ff427d",
+    "original_artifact_entries_verified": 112,
+    "original_artifact_manifest_sha256": "98b9b2aa1875b8917e5ccb2da8b992190d75ffc9709fd7719dc4a802df7d4090",
+    "original_artifact_mismatches": 0,
+    "original_handoff_receipt_sha256": "8bc2e396424f4eb61596c22d7724ae7fcaac3b1eef4838d09f25ff8f58d012e9",
+    "preserved_original_run_and_notebook_files": 115,
+    "preserved_original_run_files": 114,
+    "reviewed_at_utc": "2026-09-27T16:23:06.977146+00:00",
+    "scope": "Read-only verification recorded at the documentation handoff; this is not a current reproduction or a manifest of the public export."
+  },
+  "limitations": [
+    "Checksum agreement detects byte changes; it is not an independent replication or proof of every modeling/measurement choice.",
+    "The original environment and data caches were removed after the recorded experiment; recorded cache/environment identities are historical."
+  ],
+  "public_export": {
+    "checksums": "../checksums.json",
+    "provenance": "../provenance.json",
+    "scope": "The public export contains selected aggregate evidence and original figures, not all original run artifacts. Its hashes describe only those included files."
+  },
+  "schema": 1
+}

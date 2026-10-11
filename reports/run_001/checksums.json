@@ -1,0 +1,131 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 19762,
+      "sha256": "c0b2d28581aaebdd9389bb3415ab38f4442bd73e4a5399a76dba353ccf95ce52"
+    },
+    "architecture.json": {
+      "bytes": 1589,
+      "sha256": "42a8155bbb76795a3700a900d1cc97ea641ea64b5d4ecacea5cf4b9983efa288"
+    },
+    "configuration.json": {
+      "bytes": 1198,
+      "sha256": "d2b6de10f15c66824b38f94692b7f92b01f2391cc82d27b10446113a287b70a0"
+    },
+    "evidence/acceptance.json": {
+      "bytes": 730,
+      "sha256": "f3d6c50d78dc3feea128cac2ad14eea506d51a1e804bbae4307a06e6bd26b040"
+    },
+    "evidence/correctness.json": {
+      "bytes": 786,
+      "sha256": "785db8eeadd4fade4c56691e8bd5376148bb1c4ea759f0fc809ed57adb04064c"
+    },
+    "evidence/data_audit.json": {
+      "bytes": 1782,
+      "sha256": "fbac87556eddd9e45a0b419177464d3d32eac257fbd7c60cae7542d73c285281"
+    },
+    "evidence/device_confirmation.json": {
+      "bytes": 1359,
+      "sha256": "fa4b7e89a737855bd6d826b79dd69ea21b4a761fbfd998edcc88176cb4ce56f3"
+    },
+    "evidence/environment.json": {
+      "bytes": 3896,
+      "sha256": "b62203903aa4e3dc9936414c22b8b4c484d8c0f06bea3fe07e3658ba31cc8fe7"
+    },
+    "evidence/integrity.json": {
+      "bytes": 1392,
+      "sha256": "90ab651d37034ca7ac85d13d260678833cd6661197ea495b91ff9f83ce8cc7e3"
+    },
+    "evidence/runtime_validation.json": {
+      "bytes": 3726,
+      "sha256": "df7f5c16ee2ca5e957a501419a9988da36f58e18c135986e27ffc8f45457dc3c"
+    },
+    "evidence/training_status.json": {
+      "bytes": 405,
+      "sha256": "7a6d93dd5f35f0ceef687187b1d48bfa9838ee70301f4c63d1951b9c6c60c330"
+    },
+    "evidence/training_timing.json": {
+      "bytes": 8832,
+      "sha256": "785a82d90e414ecd15f66df0fcd232972b7d4cc6832c561be6370646ddaa4e1a"
+    },
+    "figures/completion_quality.png": {
+      "bytes": 30123,
+      "sha256": "a94b515cd2afca457dc234a48e07dc58b436da8469a514c286736df9e1342a65"
+    },
+    "figures/engine_latency.png": {
+      "bytes": 155026,
+      "sha256": "0ab68487748eeb7313065a8a7ae7af9d2b7a973e9322820af71c69cdab239ba4"
+    },
+    "figures/http_latency.png": {
+      "bytes": 359718,
+      "sha256": "4b67067f263b34ecd62be7872c8f9ae843c37e2c06dd6d53ecfc665ac48d1578"
+    },
+    "figures/learning_curves.png": {
+      "bytes": 68013,
+      "sha256": "3cb65c37d16b6f23228b7b5bc60cd5bb220da284855737f624462ec723a2fbb1"
+    },
+    "figures/memory_snapshots.png": {
+      "bytes": 69129,
+      "sha256": "6c2114a16f3f45092f41420ae7761bbe9b7ce886c9de4fb9c231862b26509e79"
+    },
+    "figures/prediction_quality.png": {
+      "bytes": 40824,
+      "sha256": "b1842058df61c4fc1a61516865aaa67e373e90c9ce8384ebe2d0a5e58d480e63"
+    },
+    "figures/retained_kv_memory.png": {
+      "bytes": 66240,
+      "sha256": "ce991b52ea2ccc86f300bab58d1bc0e3ccb8b34798cc83a8f84d07be7e22989b"
+    },
+    "figures/streaming_quality.png": {
+      "bytes": 102167,
+      "sha256": "f4eb140349ee7b08ce2e7cfdda09d5490d0a088a4baeed6d351d90293e84525f"
+    },
+    "metrics/line.json": {
+      "bytes": 3074,
+      "sha256": "3a826804dbaa294323a527696925a9dabb079e237f5017b3b17dae7fb6d86b6f"
+    },
+    "metrics/streaming.json": {
+      "bytes": 8418,
+      "sha256": "ee797c7aa991b089c4f427dbd2da7ad80d81119bb34fa359b1ed855b21625944"
+    },
+    "metrics/token.json": {
+      "bytes": 4749,
+      "sha256": "ee22aa91eb09317425d4b566c2cdd7859f07c557935081cdb1c556c0bcf7e425"
+    },
+    "metrics/validation_audit.json": {
+      "bytes": 6286,
+      "sha256": "c985a9b50edcf95ce006e24de9913cd46934d5a7c910958caa71a3105491ba4e"
+    },
+    "provenance.json": {
+      "bytes": 13808,
+      "sha256": "45b29be37b24829150625d43e93f981446e17c9f1f9ae7cadf99e6b9f29023c0"
+    },
+    "summary.json": {
+      "bytes": 143992,
+      "sha256": "e2670adc202a72b5068f4943bcde60153ed5a1c24466878ef826cd4637820cd6"
+    },
+    "tables/engine_summary.csv": {
+      "bytes": 29374,
+      "sha256": "559f3729a193a60e2ecd942b7df105cca0663b8011f855166bbc78267c193a6d"
+    },
+    "tables/epochs.csv": {
+      "bytes": 1897,
+      "sha256": "9c414444219927f907dac51456ceb7923405cf5121f9a65e8782e20ae94009bf"
+    },
+    "tables/http_summary.csv": {
+      "bytes": 23339,
+      "sha256": "3b528ad74cb81e1c06f2e367b542767b5c7fa0d33f007ccaeac028f2eb0b0501"
+    },
+    "tables/restart_summary.csv": {
+      "bytes": 7385,
+      "sha256": "4c99b7a1752f5a1e129b588269662d26f8fc88541fc3bf4aa914db28899e9c3f"
+    },
+    "tables/startup_measurements.csv": {
+      "bytes": 12789,
+      "sha256": "5790d38995db09fb70d7e06ee78f7e4640e8abbdf19a58400f23ae9deb806be7"
+    }
+  },
+  "schema": 1,
+  "scope": "All distributed files beneath reports/run_001 except this checksum manifest itself."
+}

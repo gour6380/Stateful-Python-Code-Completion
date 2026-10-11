@@ -1,0 +1,4258 @@
+{
+  "architecture": {
+    "class": "src.model.CodeTransformer",
+    "config": {
+      "context_length": 1024,
+      "dropout": 0.1,
+      "ff_width": 1536,
+      "heads": 8,
+      "layers": 8,
+      "norm_eps": 1e-05,
+      "rope_base": 10000.0,
+      "vocab_size": 8192,
+      "width": 512
+    },
+    "dtype": "float32",
+    "parameter_count": 31465984,
+    "schema": 1,
+    "source_hash": "f14ab1aa7b9b9132161ed7c20ef466f88f9e9c2a61bb01839c2a92b42f048c47",
+    "tied_embeddings": true,
+    "tokenizer_identity": {
+      "cache_id": "78d0032ae0e50caea5c64b1b7f4185147325a4b088332171fb58d247c0b67263",
+      "data": {
+        "cache_id": "8fd43d116d66d7c67547b3ed24f26a970c3c2d74514be1251b563ff0a97171b2",
+        "inventory": "61972d361cfe8aa79b1e3a2e91739e5826697ee42efe76edb34cb1e3d0c3ac04",
+        "parent": {
+          "cache_id": "0bf59e5e72e3d42dfba262a3c26f2f169e869e504053c86e3a7d8465b6beafc7",
+          "inventory": "7d15d652a471fe0ce9a8e735d21eb6c25c0920ee825904a6a97de78db42182a3",
+          "protocol": "py150-python313-repository-clones-v1"
+        },
+        "protocol": "py150-python313-repository-clones-v1"
+      },
+      "fit_split": "train",
+      "fitted_file_ids_sha256": "ea2d35fbaa51b77e456a0ce52cb0e344f8600e78d797a607b6a91894d0e3feec",
+      "implementation": {
+        "source_sha256": "6369dc035a2de97317c2d16394370e46e4aad88db92d8c18e2c725abd5f2a402",
+        "tokenizers": "0.23.2"
+      },
+      "protocol": "python-byte-bpe-v1",
+      "sha256": "6dd342eb6a1ddf9bf523954d320c5e81b41752d123a369485a9cf6c6a173b354",
+      "special_ids": {
+        "<|bos|>": 1,
+        "<|eos|>": 2,
+        "<|pad|>": 0,
+        "<|unk|>": 3
+      },
+      "vocab_size": 8192
+    }
+  },
+  "artifact_integrity": {
+    "historical_receipt": "evidence/integrity.json",
+    "provenance": "provenance.json",
+    "public_export_checksums": "checksums.json"
+  },
+  "benchmarks": {
+    "aggregation": "Latency is the arithmetic mean of per-block medians (or p95s). Speedup is median of stateless/policy p50 ratios paired within block, budget, regime and workload. Natural HTTP outputs may differ in length.",
+    "blocks": 3,
+    "engine": [
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.8072997289928026,
+              "1": 0.8071392085039406,
+              "2": 0.8215833750000456
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.8120074374989296,
+            "mean_block_p95_seconds": 0.8519603281660239,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.014048305272560832,
+            "paired_block_speedup_range": [
+              0.013840094449260779,
+              0.014066414360681581
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.2062116045053699,
+              "1": 0.20581200000015087,
+              "2": 0.2092904164965148
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2071046736673452,
+            "mean_block_p95_seconds": 0.20995383808137072,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.05506873644922826,
+            "paired_block_speedup_range": [
+              0.05433020631469009,
+              0.05509366800044785
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.011355812501278706,
+              "1": 0.011338937998516485,
+              "2": 0.011370791507943068
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011355180669246087,
+            "mean_block_p95_seconds": 0.013900035729117612,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.3672209584983648,
+              "1": 0.3655008745045052,
+              "2": 0.37697854149882914
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3699001248338997,
+            "mean_block_p95_seconds": 0.37526186539544143,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.000297901024484,
+            "paired_block_speedup_range": [
+              0.999822105750325,
+              1.0010338227912678
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.21124422900174977,
+              "1": 0.21081512549426407,
+              "2": 0.21654250000574393
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.21286728483391926,
+            "mean_block_p95_seconds": 0.2252525124992341,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.7388894159805461,
+            "paired_block_speedup_range": [
+              1.7334422904613767,
+              1.742698410228198
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.3673303539981134,
+              "1": 0.3654358540006797,
+              "2": 0.3773682705068495
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.37004482616854756,
+            "mean_block_p95_seconds": 0.3737015112203759,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.011524041503435,
+              "1": 0.011631458502961323,
+              "2": 0.01151229200331727
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011555930669904532,
+            "mean_block_p95_seconds": 0.012676417949114694,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9843885429299395,
+            "paired_block_speedup_range": [
+              0.9839882118192892,
+              1.007712756170437
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.20818018749559997,
+              "1": 0.20809831249789568,
+              "2": 0.21268860399868572
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2096557013307271,
+            "mean_block_p95_seconds": 0.21943911918497178,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.054544922889114535,
+            "paired_block_speedup_range": [
+              0.054469741469206565,
+              0.05502146725959604
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.01133952099189628,
+              "1": 0.011449874487880152,
+              "2": 0.01160108350450173
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011463492994759386,
+            "mean_block_p95_seconds": 0.012548023014824139,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.011412625499360729,
+              "1": 0.011653937493974809,
+              "2": 0.011432020997744985
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01149952799702684,
+            "mean_block_p95_seconds": 0.012674892101009997,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9977931288434124,
+            "paired_block_speedup_range": [
+              0.979030692564379,
+              1.0090031425766535
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.20890206250624033,
+              "1": 0.2076885625065188,
+              "2": 0.20999552099965513
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.20886204867080474,
+            "mean_block_p95_seconds": 0.2116355195668196,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.05493592116065623,
+            "paired_block_speedup_range": [
+              0.054319215695854246,
+              0.055123318821045326
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.011515374993905425,
+              "1": 0.01140956249582814,
+              "2": 0.011406792000343557
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011443909830025708,
+            "mean_block_p95_seconds": 0.01571787113158886,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.7179211460024817,
+              "1": 0.7204261245060479,
+              "2": 0.7312110829952871
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.7231861178346056,
+            "mean_block_p95_seconds": 0.7551736068356452,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.01568972947641328,
+            "paired_block_speedup_range": [
+              0.015622369879015822,
+              0.015811219051090463
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.7197974584923941,
+              "1": 0.7195382085046731,
+              "2": 0.7396201460069278
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.726318604334665,
+            "mean_block_p95_seconds": 0.7623623041637377,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.015709090730193397,
+            "paired_block_speedup_range": [
+              0.0154447523635749,
+              0.01577000358493914
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.011351208500855137,
+              "1": 0.011303291001240723,
+              "2": 0.011423249998188112
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01135924983342799,
+            "mean_block_p95_seconds": 0.012658962987188715,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.36708116700174287,
+              "1": 0.36548877049062867,
+              "2": 0.37734589548927033
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.369971944327214,
+            "mean_block_p95_seconds": 0.37887536101188746,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0010347371079658,
+            "paired_block_speedup_range": [
+              0.9992990550895408,
+              1.0011947486823405
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.2118717084886157,
+              "1": 0.2113509375049034,
+              "2": 0.21825383300165413
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.21382549299839107,
+            "mean_block_p95_seconds": 0.23055146239955016,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.730996994668265,
+            "paired_block_speedup_range": [
+              1.7280859375826034,
+              1.7343561447073494
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.36746099950687494,
+              "1": 0.36523258299712325,
+              "2": 0.3777967290006927
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3701634371682303,
+            "mean_block_p95_seconds": 0.3729856362195278,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.011272499505139422,
+              "1": 0.011358604002452921,
+              "2": 0.011355291506333742
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011328798337975362,
+            "mean_block_p95_seconds": 0.012333608532935613,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0059150395739043,
+            "paired_block_speedup_range": [
+              0.9984061420442236,
+              1.006034242210369
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.011386250000214204,
+              "1": 0.011325833496812265,
+              "2": 0.011414250497182366
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011375444664736278,
+            "mean_block_p95_seconds": 0.012662613884458551,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0007191017742765,
+            "paired_block_speedup_range": [
+              0.9959837960045101,
+              1.001294960259566
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.011340520497469697,
+              "1": 0.011340500001097098,
+              "2": 0.011422458504966926
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011367826334511241,
+            "mean_block_p95_seconds": 0.012641766761225881,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.011417354005970992,
+              "1": 0.011467374999483582,
+              "2": 0.011368145998858381
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011417625001437651,
+            "mean_block_p95_seconds": 0.01248182894172108,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0059704279659751,
+            "paired_block_speedup_range": [
+              0.9899134274951048,
+              1.020268608046777
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.011322917009238154,
+              "1": 0.011328708496876061,
+              "2": 0.012358666499494575
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01167009733520293,
+            "mean_block_p95_seconds": 0.013111212001482879,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.002030239655363,
+            "paired_block_speedup_range": [
+              0.9384962766656192,
+              1.0143605650606518
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.011485520495625678,
+              "1": 0.011351708490110468,
+              "2": 0.01159856249432778
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011478597160021309,
+            "mean_block_p95_seconds": 0.01336334373287779,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.17023199999675853,
+              "1": 0.17018483300489606,
+              "2": 0.17158364549686667
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.17066682616617376,
+            "mean_block_p95_seconds": 0.17490194744920395,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.040055837399948745,
+            "paired_block_speedup_range": [
+              0.03905881870056103,
+              0.04059410981174499
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.16993049950542627,
+              "1": 0.1693794165039435,
+              "2": 0.19233239599998342
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.17721410400311774,
+            "mean_block_p95_seconds": 0.2617987124996337,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.04024630701584,
+            "paired_block_speedup_range": [
+              0.034845167225203325,
+              0.04066613422224844
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006910416501341388,
+              "1": 0.006816895998781547,
+              "2": 0.006701854501443449
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006809722333855461,
+            "mean_block_p95_seconds": 0.008122312916869608,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.1880996665058774,
+              "1": 0.1885932499935734,
+              "2": 0.2006184165002196
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.19243711099989014,
+            "mean_block_p95_seconds": 0.21997931031825524,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.336859219571239,
+            "paired_block_speedup_range": [
+              1.2882815272440777,
+              1.3646009281322449
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.18814643700170564,
+              "1": 0.18701339599647326,
+              "2": 0.18911377099720994
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.18809120133179627,
+            "mean_block_p95_seconds": 0.2095821678369248,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.3642617079852493,
+            "paired_block_speedup_range": [
+              1.3481527548302834,
+              1.3666535157083006
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.256680979495286,
+              "1": 0.25212262500281213,
+              "2": 0.2584530000021914
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.25575220150009653,
+            "mean_block_p95_seconds": 0.2592187918863298,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.006839020497864112,
+              "1": 0.006938354010344483,
+              "2": 0.006699646000924986
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006825673503044527,
+            "mean_block_p95_seconds": 0.007691139479720732,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.001294703784727,
+            "paired_block_speedup_range": [
+              0.9936164961490347,
+              1.0047980894628104
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.006795583001803607,
+              "1": 0.006883187495986931,
+              "2": 0.0068635624993476085
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006847444332379382,
+            "mean_block_p95_seconds": 0.007696949687912517,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0015800099618815,
+            "paired_block_speedup_range": [
+              0.9808013699076026,
+              1.0076949986143997
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006847875003586523,
+              "1": 0.006894063000800088,
+              "2": 0.006731791501806583
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0068245765020643985,
+            "mean_block_p95_seconds": 0.007911086114230177,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.006876167004520539,
+              "1": 0.006910062496899627,
+              "2": 0.006930208495759871
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0069054793323933454,
+            "mean_block_p95_seconds": 0.009128294768985747,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0151852033785564,
+            "paired_block_speedup_range": [
+              0.9728964149834766,
+              1.0262117740359702
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.006860207999125123,
+              "1": 0.006926374990143813,
+              "2": 0.007426124997437
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.007070902662235312,
+            "mean_block_p95_seconds": 0.008605660207103938,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0175468440372846,
+            "paired_block_speedup_range": [
+              0.9079264088525072,
+              1.0237949149062109
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006980582998949103,
+              "1": 0.007091187493642792,
+              "2": 0.00674237500061281
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0069380484977349015,
+            "mean_block_p95_seconds": 0.008950163314875682,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 1.6608682084988686,
+              "1": 1.661147520499071,
+              "2": 1.6667570624995278
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.6629242638324893,
+            "mean_block_p95_seconds": 1.749137322238433,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.011353960899208135,
+            "paired_block_speedup_range": [
+              0.01133655301729801,
+              0.011491751811372854
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.24317710399918724,
+              "1": 0.24249014600354712,
+              "2": 0.2463908334975713
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.24401936116676856,
+            "mean_block_p95_seconds": 0.24774463920402923,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.07773811314407623,
+            "paired_block_speedup_range": [
+              0.07742719273626647,
+              0.07777884712596571
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.018828520500392187,
+              "1": 0.018860603995562997,
+              "2": 0.019153958492097445
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.018947694329350877,
+            "mean_block_p95_seconds": 0.01995392778602157,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.6079007704975083,
+              "1": 0.6059157499985304,
+              "2": 0.6105484375002561
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.6081216526654316,
+            "mean_block_p95_seconds": 0.6106492942482873,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0078406800084712,
+            "paired_block_speedup_range": [
+              0.9996880321446606,
+              1.0201597436753354
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.24097754200192867,
+              "1": 0.24132618750445545,
+              "2": 0.2508012289981707
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.24436831950151827,
+            "mean_block_p95_seconds": 0.24758339328473086,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 2.521857928955941,
+            "paired_block_speedup_range": [
+              2.483468442278569,
+              2.530461148130007
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.607711124997877,
+              "1": 0.6106665415063617,
+              "2": 0.6228569375016377
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.6137448680019588,
+            "mean_block_p95_seconds": 0.6239576471118198,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.018872978995204903,
+              "1": 0.01882877099706093,
+              "2": 0.018876875001296867
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0188595416645209,
+            "mean_block_p95_seconds": 0.024683338195609385,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0103719718170332,
+            "paired_block_speedup_range": [
+              1.0008740877377034,
+              1.0147016385981713
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.24517327100329567,
+              "1": 0.24451575049897656,
+              "2": 0.24854141700052423
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2460768128342655,
+            "mean_block_p95_seconds": 0.25060893136348267,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.07707163631156089,
+            "paired_block_speedup_range": [
+              0.07706721972776225,
+              0.07777654115154461
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.019068729001446627,
+              "1": 0.018845228994905483,
+              "2": 0.019154395995428786
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.019022784663926966,
+            "mean_block_p95_seconds": 0.02051397628407964,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.018900958501035348,
+              "1": 0.01885506300459383,
+              "2": 0.018926957993244287
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.018894326499624487,
+            "mean_block_p95_seconds": 0.025055255547340484,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0027170050596321,
+            "paired_block_speedup_range": [
+              1.0012628704878466,
+              1.0275587868377871
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.24588710450188955,
+              "1": 0.24498762549774256,
+              "2": 0.24886422900453908
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2465796530013904,
+            "mean_block_p95_seconds": 0.2504092635800286,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.07707729341604784,
+            "paired_block_speedup_range": [
+              0.07706052282784699,
+              0.07814928674909376
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.01895231250091456,
+              "1": 0.01887887450720882,
+              "2": 0.01944856199406786
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.019093249667397078,
+            "mean_block_p95_seconds": 0.020309224420634563,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 1.5731192500024918,
+              "1": 1.5724344580012257,
+              "2": 1.5768911250052042
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.5741482776696405,
+            "mean_block_p95_seconds": 1.6183043604401366,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.012076531279706823,
+            "paired_block_speedup_range": [
+              0.012006202004380738,
+              0.012102067853824795
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 1.567917395499535,
+              "1": 1.5700991459962097,
+              "2": 1.5934528124998906
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.5771564513318783,
+            "mean_block_p95_seconds": 1.603655091063168,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.01204603478902817,
+            "paired_block_speedup_range": [
+              0.011951012823493158,
+              0.012120068057453097
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.018887187492509838,
+              "1": 0.01902970850642305,
+              "2": 0.01904337499581743
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.018986756998250105,
+            "mean_block_p95_seconds": 0.020879470850680565,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.6083859999998822,
+              "1": 0.6060628755003563,
+              "2": 0.6243982084997697
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.6129490280000027,
+            "mean_block_p95_seconds": 0.7817095637828363,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9987321305943224,
+            "paired_block_speedup_range": [
+              0.9976646850007185,
+              1.0021699126526311
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.24113602100260323,
+              "1": 0.24109864599449793,
+              "2": 0.24711166649649385
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.243115444497865,
+            "mean_block_p95_seconds": 0.24725228643316466,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 2.519800415870179,
+            "paired_block_speedup_range": [
+              2.519209415286618,
+              2.520884792004647
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.6076146460036398,
+              "1": 0.6073779790021945,
+              "2": 0.6229400419979356
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.6126442223345899,
+            "mean_block_p95_seconds": 0.639516416463933,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.01989314550155541,
+              "1": 0.01887575000000652,
+              "2": 0.01988675000029616
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.019551881833952695,
+            "mean_block_p95_seconds": 0.02208001506345075,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9641522368433494,
+            "paired_block_speedup_range": [
+              0.9504132210971211,
+              1.0040020393827978
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.018870396001148038,
+              "1": 0.018893937500251923,
+              "2": 0.018939083500299603
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01890113900056652,
+            "mean_block_p95_seconds": 0.024772454866615588,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.003035576604067,
+            "paired_block_speedup_range": [
+              1.0019243100535216,
+              1.0123961117773574
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.01890670849388698,
+              "1": 0.01895129149488639,
+              "2": 0.019173854496330023
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01901061816170113,
+            "mean_block_p95_seconds": 0.02060279205009768,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.018974229002196807,
+              "1": 0.01892547949682921,
+              "2": 0.018871354499424342
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01892368766615012,
+            "mean_block_p95_seconds": 0.025979211121011755,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0174625250584144,
+            "paired_block_speedup_range": [
+              0.9965106352630141,
+              1.027623685977278
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.018933812505565584,
+              "1": 0.018827354499080684,
+              "2": 0.019271791992650833
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.019010986332432367,
+            "mean_block_p95_seconds": 0.021378216660135268,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9986378068889741,
+            "paired_block_speedup_range": [
+              0.996321255832301,
+              1.0329794873925953
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.018908020996605046,
+              "1": 0.019448270999419037,
+              "2": 0.019200896000256762
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.019185729332093615,
+            "mean_block_p95_seconds": 0.022176534496975365,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.1718043540022336,
+              "1": 0.1698616249996121,
+              "2": 0.1734644789903541
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.1717101526640666,
+            "mean_block_p95_seconds": 0.17833687995759342,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.03961798020614088,
+            "paired_block_speedup_range": [
+              0.03930211843938854,
+              0.04035331405470738
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.16956456300249556,
+              "1": 0.16960131249652477,
+              "2": 0.17110097900877008
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.1700889515025968,
+            "mean_block_p95_seconds": 0.1741704138815597,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.04014129707095188,
+            "paired_block_speedup_range": [
+              0.03984501747331486,
+              0.0404152503217965
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006806541496189311,
+              "1": 0.006854479499452282,
+              "2": 0.006817521498305723
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006826180831315772,
+            "mean_block_p95_seconds": 0.007622250695809877,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.19225208349962486,
+              "1": 0.18761812500451924,
+              "2": 0.19097256250097416
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.19028092366837276,
+            "mean_block_p95_seconds": 0.19684904878376983,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.34551821151527,
+            "paired_block_speedup_range": [
+              1.3384141893901658,
+              1.3528734448566697
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.1877742085052887,
+              "1": 0.18695268699957523,
+              "2": 0.18969560400000773
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.18814083316829056,
+            "mean_block_p95_seconds": 0.19168153717206832,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.3619804732206027,
+            "paired_block_speedup_range": [
+              1.3503074390393899,
+              1.3703315196691328
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.25731291649572086,
+              "1": 0.25244360400392907,
+              "2": 0.2583617085037986
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2560394096678162,
+            "mean_block_p95_seconds": 0.2607687432626941,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.006909521005582064,
+              "1": 0.007461583001713734,
+              "2": 0.006817791996581946
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.007062965334625915,
+            "mean_block_p95_seconds": 0.00900735854981273,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9832270485515634,
+            "paired_block_speedup_range": [
+              0.9537241625235572,
+              0.985388494666347
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.0068530205098795705,
+              "1": 0.006937979502254166,
+              "2": 0.006694709001749288
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006828569671294342,
+            "mean_block_p95_seconds": 0.0087316440694849,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0013037909020643,
+            "paired_block_speedup_range": [
+              0.993512640556166,
+              1.0257009259103953
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006808562502556015,
+              "1": 0.007116291999409441,
+              "2": 0.006703437502437737
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006876097334801064,
+            "mean_block_p95_seconds": 0.008249027881538494,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.0072663124956307,
+              "1": 0.006838687499111984,
+              "2": 0.007412750004732516
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0071725833331584,
+            "mean_block_p95_seconds": 0.009142746910462544,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9480278339170579,
+            "paired_block_speedup_range": [
+              0.9212562126840438,
+              1.0728818942158433
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.0068304380038171075,
+              "1": 0.006816312998125795,
+              "2": 0.0068489789991872385
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0068319100003767135,
+            "mean_block_p95_seconds": 0.009603839279831543,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0085248547673775,
+            "paired_block_speedup_range": [
+              0.99708905455016,
+              1.076403621725539
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006888666495797224,
+              "1": 0.007337103997997474,
+              "2": 0.006829041994933505
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.007018270829576068,
+            "mean_block_p95_seconds": 0.008903340180161952,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 3.8041866244966513,
+              "1": 3.796090562500467,
+              "2": 3.976014583502547
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 3.8587639234998883,
+            "mean_block_p95_seconds": 4.003448464664446,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.01014389521618028,
+            "paired_block_speedup_range": [
+              0.009729057626117308,
+              0.01016572717629517
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.32413802049995866,
+              "1": 0.3235658749981667,
+              "2": 0.3285128124989569
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.32540556933236076,
+            "mean_block_p95_seconds": 0.3283476771854718,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.11905197187965647,
+            "paired_block_speedup_range": [
+              0.11775149562941904,
+              0.1192648050265105
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.03858927050168859,
+              "1": 0.03859002099488862,
+              "2": 0.038682875005179085
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0386207221672521,
+            "mean_block_p95_seconds": 0.04224119893260649,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 1.2305445625024731,
+              "1": 1.2303641664984752,
+              "2": 1.2884221040003467
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.249776944333765,
+            "mean_block_p95_seconds": 1.2661254924627428,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0007486437928779,
+            "paired_block_speedup_range": [
+              0.9828516831270765,
+              1.0015317234791214
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.30602435449691257,
+              "1": 0.30569074950471986,
+              "2": 0.3101093750083237
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.30727482633665204,
+            "mean_block_p95_seconds": 0.31139560803349015,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 4.027878740163489,
+            "paired_block_speedup_range": [
+              4.027226586351307,
+              4.083487748349692
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 1.2324294165009633,
+              "1": 1.2312852709947038,
+              "2": 1.26632783349487
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.2433475069968456,
+            "mean_block_p95_seconds": 1.3203417152935193,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.038682458507537376,
+              "1": 0.038651604001643136,
+              "2": 0.03939350000291597
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.03890918750403216,
+            "mean_block_p95_seconds": 0.041007688317525506,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9924749824800894,
+            "paired_block_speedup_range": [
+              0.989897876377748,
+              1.0199961434420792
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.326216770496103,
+              "1": 0.32629933349380735,
+              "2": 0.3297636665010941
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.32742659016366815,
+            "mean_block_p95_seconds": 0.3306534826333518,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.11825299739576962,
+            "paired_block_speedup_range": [
+              0.11756306577036311,
+              0.12095012293985578
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.03945595849654637,
+              "1": 0.038360750004358124,
+              "2": 0.038995541995973326
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.038937416832292605,
+            "mean_block_p95_seconds": 0.04186567969760896,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.038745041500078514,
+              "1": 0.03873560400097631,
+              "2": 0.03922949999832781
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.03890338183312755,
+            "mean_block_p95_seconds": 0.04302248285481861,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0029645466948403,
+            "paired_block_speedup_range": [
+              0.9931816872199092,
+              1.0105567185052493
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.32604033350071404,
+              "1": 0.32547181250265567,
+              "2": 0.32966504199430346
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3270590626658911,
+            "mean_block_p95_seconds": 0.3299888561433666,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.11936651966588674,
+            "paired_block_speedup_range": [
+              0.11818669265455782,
+              0.12008962687612787
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.03915406199666904,
+              "1": 0.03885043750779005,
+              "2": 0.03896202099713264
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.038988840167197246,
+            "mean_block_p95_seconds": 0.04291364701760661,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 3.7170598124939715,
+              "1": 3.703062417007459,
+              "2": 3.820853728997463
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 3.746991986166298,
+            "mean_block_p95_seconds": 4.068805316660534,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.010334758768247724,
+            "paired_block_speedup_range": [
+              0.010295043148012823,
+              0.010337114175042789
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 3.702871542001958,
+              "1": 3.6925673540026764,
+              "2": 3.7834071465040324
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 3.7262820141695556,
+            "mean_block_p95_seconds": 3.7643089978012236,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.010374358400913978,
+            "paired_block_speedup_range": [
+              0.010366494455523552,
+              0.010396939181822377
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.03841491648927331,
+              "1": 0.038278979001916014,
+              "2": 0.03933585400227457
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.038676583164487965,
+            "mean_block_p95_seconds": 0.03987614096646818,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 1.2310104789939942,
+              "1": 1.2301628544955747,
+              "2": 1.2324490625032922
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.2312074653309537,
+            "mean_block_p95_seconds": 1.2445364066688247,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0010245419964878,
+            "paired_block_speedup_range": [
+              1.0009137818304734,
+              1.0303532317330748
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.3056571039996925,
+              "1": 0.30529883350391174,
+              "2": 0.30866464549762895
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3065401943337444,
+            "mean_block_p95_seconds": 0.3098031714350024,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 4.033501189210233,
+            "paired_block_speedup_range": [
+              4.03110327841116,
+              4.114037331516868
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 1.2321353540028213,
+              "1": 1.231423208002525,
+              "2": 1.2698578744966653
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.2444721455006704,
+            "mean_block_p95_seconds": 1.3388207879788145,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.03883818750909995,
+              "1": 0.03855841650511138,
+              "2": 0.03844629150262335
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.038614298505611565,
+            "mean_block_p95_seconds": 0.05590741239939234,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.995297174513469,
+            "paired_block_speedup_range": [
+              0.9932084754535706,
+              1.024292004744089
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.038784375006798655,
+              "1": 0.038944542000535876,
+              "2": 0.03883747899817536
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.03885546533516996,
+            "mean_block_p95_seconds": 0.06729757221643619,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9945865312650061,
+            "paired_block_speedup_range": [
+              0.9854290493574889,
+              1.0139749029551546
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.03857441700529307,
+              "1": 0.03837708300125087,
+              "2": 0.03938022899819771
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.03877724300158055,
+            "mean_block_p95_seconds": 0.040818920736395134,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.03869689549901523,
+              "1": 0.03924664601072436,
+              "2": 0.03936454150971258
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.03910269433981739,
+            "mean_block_p95_seconds": 0.044396338295579575,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9985071022860332,
+            "paired_block_speedup_range": [
+              0.9774359696212765,
+              1.0164668115395674
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.03910335449472768,
+              "1": 0.03913972950249445,
+              "2": 0.038829083496239036
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.039024055831153724,
+            "mean_block_p95_seconds": 0.04478741346489793,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9881281412160396,
+            "paired_block_speedup_range": [
+              0.9801059942284616,
+              1.030484018505616
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.038639124992187135,
+              "1": 0.03836108349787537,
+              "2": 0.0400127499960945
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.039004319495385666,
+            "mean_block_p95_seconds": 0.04075656784989405,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "replay"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.16908079149288824,
+              "1": 0.169477833500423,
+              "2": 0.17041579150100006
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.1696581388314371,
+            "mean_block_p95_seconds": 0.1728152437552732,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.040111986894562426,
+            "paired_block_speedup_range": [
+              0.03969312016106579,
+              0.041801803961585206
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.1699990000051912,
+              "1": 0.16954614550195402,
+              "2": 0.169637603998126
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.16972758316842373,
+            "mean_block_p95_seconds": 0.17344135832972826,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.03989533169182096,
+            "paired_block_speedup_range": [
+              0.03967712736761604,
+              0.04199356357545512
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006782166492484976,
+              "1": 0.006727104009769391,
+              "2": 0.007123687508283183
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006877652670179184,
+            "mean_block_p95_seconds": 0.007557663447126591,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "edit_rebuild"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.18701997899188427,
+              "1": 0.18718839599750936,
+              "2": 0.18903197949839523
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.18774678482926296,
+            "mean_block_p95_seconds": 0.19098873381565984,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.3762577072418694,
+            "paired_block_speedup_range": [
+              1.3659760992998877,
+              1.3968238374623425
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.18817068750649923,
+              "1": 0.18635187549807597,
+              "2": 0.1873906455002725
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.18730440283494923,
+            "mean_block_p95_seconds": 0.19061624306511174,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.3721078702077272,
+            "paired_block_speedup_range": [
+              1.3678415639890953,
+              1.4090584634101562
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.2573876874957932,
+              "1": 0.25569487499888055,
+              "2": 0.26404437500605127
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2590423125002417,
+            "mean_block_p95_seconds": 0.26824573509948096,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "fixed_32_tokens"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.0069646874981117435,
+              "1": 0.006824228999903426,
+              "2": 0.006992749993514735
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006927222163843301,
+            "mean_block_p95_seconds": 0.010111822796655663,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0041848255093955,
+            "paired_block_speedup_range": [
+              0.9798665165026509,
+              1.2859658935216567
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.006848167009593453,
+              "1": 0.006847978998848703,
+              "2": 0.006859104003524408
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006851750003988855,
+            "mean_block_p95_seconds": 0.008104719814097432,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0212708729534918,
+            "paired_block_speedup_range": [
+              0.9764681666044747,
+              1.3110222543590473
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.006993833500018809,
+              "1": 0.0066868334979517385,
+              "2": 0.008992437993583735
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.007557701663851428,
+            "mean_block_p95_seconds": 0.010840790762449613,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "prefill"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.006768917002773378,
+              "1": 0.007050687010632828,
+              "2": 0.006736187504429836
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006851930505945347,
+            "mean_block_p95_seconds": 0.009192683915656138,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0489491895871002,
+            "paired_block_speedup_range": [
+              0.9820260761340386,
+              1.086708244157763
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.006871375000628177,
+              "1": 0.006785499994293787,
+              "2": 0.006697500495647546
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.006784791830189836,
+            "mean_block_p95_seconds": 0.0076362120295622535,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.033308472291554,
+            "paired_block_speedup_range": [
+              1.0204050556220823,
+              1.0929854353894528
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.007100250004441477,
+              "1": 0.006923958499100991,
+              "2": 0.007320270495256409
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.007114826332932959,
+            "mean_block_p95_seconds": 0.009204813105316133,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "replay"
+      }
+    ],
+    "engine_measured_requests": 32400,
+    "http": [
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.05270556200412102,
+              "1": 0.053439208000781946,
+              "2": 0.053772958999616094
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.05330590966817302,
+            "mean_block_p95_seconds": 0.1777310500064535,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9846177808915062,
+            "paired_block_speedup_range": [
+              0.9697005236538007,
+              1.033483926275941
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.04395279149321141,
+              "1": 0.04292300050292397,
+              "2": 0.04296518749470124
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04328032649694554,
+            "mean_block_p95_seconds": 0.106455689369371,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.2136259502364046,
+            "paired_block_speedup_range": [
+              1.1806948259282368,
+              1.2866892308230542
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.05189483350113733,
+              "1": 0.05522856250172481,
+              "2": 0.05214366650034208
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0530890208344014,
+            "mean_block_p95_seconds": 0.18529106845477752,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.01438545850396622,
+              "1": 0.014857145994028542,
+              "2": 0.01450902050419245
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.014583875000729071,
+            "mean_block_p95_seconds": 0.01513585449696014,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9721556221372186,
+            "paired_block_speedup_range": [
+              0.9643512114590715,
+              0.9764982461920079
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.009522729000309482,
+              "1": 0.009346291502879467,
+              "2": 0.009339833501144312
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.009402951334777754,
+            "mean_block_p95_seconds": 0.009791396049695322,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.4980771871991325,
+            "paired_block_speedup_range": [
+              1.4751417371358975,
+              1.545367807387397
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.014047374999790918,
+              "1": 0.014443458007008303,
+              "2": 0.013991791500302497
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.014160874835700573,
+            "mean_block_p95_seconds": 0.015713663778054374,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.013697624992346391,
+              "1": 0.014095957994868513,
+              "2": 0.013903833001677413
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.013899138662964106,
+            "mean_block_p95_seconds": 0.014379723020344196,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9781242372000264,
+            "paired_block_speedup_range": [
+              0.9637000459091541,
+              0.992558469979448
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.23987325050256914,
+              "1": 0.2362237705019652,
+              "2": 0.2368375419973745
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.23764485433396962,
+            "mean_block_p95_seconds": 0.24164074811681832,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.056575171271530396,
+            "paired_block_speedup_range": [
+              0.05585441048145272,
+              0.05922800432213432
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.013397978997090831,
+              "1": 0.01399106250028126,
+              "2": 0.013399124502029736
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.013596055333133942,
+            "mean_block_p95_seconds": 0.01524067300997558,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.09469154199905461,
+              "1": 0.08746120800060453,
+              "2": 0.09613131250080187
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.09276135416682034,
+            "mean_block_p95_seconds": 0.1271453403804723,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9990851875926341,
+            "paired_block_speedup_range": [
+              0.9432202437193088,
+              1.1001546422701614
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.05700070849707117,
+              "1": 0.05474443750426872,
+              "2": 0.056654874999367166
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.056133340333569016,
+            "mean_block_p95_seconds": 0.08042534723742088,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.6597147561143433,
+            "paired_block_speedup_range": [
+              1.6004447985645753,
+              1.7576370931369674
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.09460491700156126,
+              "1": 0.09622085400042124,
+              "2": 0.09067300000606338
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.09383292366934863,
+            "mean_block_p95_seconds": 0.1340060972358818,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.014056812004128005,
+              "1": 0.014509103995806072,
+              "2": 0.014549812505720183
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.014371909501884753,
+            "mean_block_p95_seconds": 0.015197210630382567,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9975992315219642,
+            "paired_block_speedup_range": [
+              0.9683028558260611,
+              1.017103237458769
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.009691854000266176,
+              "1": 0.009470021002925932,
+              "2": 0.00944579200586304
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.009535889003018383,
+            "mean_block_p95_seconds": 0.010374680066403621,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.4915239497416126,
+            "paired_block_speedup_range": [
+              1.475179980770988,
+              1.5284307175048832
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.01429722899774788,
+              "1": 0.014474270996288396,
+              "2": 0.014088625001022592
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.01428670833168629,
+            "mean_block_p95_seconds": 0.016409736999776214,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.013538854000216816,
+              "1": 0.013838229002431035,
+              "2": 0.013885375003155787
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.013754152668601213,
+            "mean_block_p95_seconds": 0.01458580983404924,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9860380974403505,
+            "paired_block_speedup_range": [
+              0.9620718922446165,
+              1.0016388015058906
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 1.4471835834992817,
+              "1": 1.4230739164995612,
+              "2": 1.4193979789997684
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 1.4298851596662037,
+            "mean_block_p95_seconds": 1.5456040722172475,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.00941154574084001,
+            "paired_block_speedup_range": [
+              0.009370643537670517,
+              0.009588413391108054
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.013561041494540405,
+              "1": 0.013645020997500978,
+              "2": 0.013358729003812186
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.013521597165284524,
+            "mean_block_p95_seconds": 0.015818686901184265,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.05084474999603117,
+              "1": 0.05112922899570549,
+              "2": 0.05328172900772188
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.05175190266648618,
+            "mean_block_p95_seconds": 0.07475988283476909,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.463255390297709,
+            "paired_block_speedup_range": [
+              1.4385931336120596,
+              1.5079991330337374
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.05506039600004442,
+              "1": 0.06172193749807775,
+              "2": 0.06109370800550096
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.059292013834541045,
+            "mean_block_p95_seconds": 0.08774833231485292,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.2546419590473288,
+            "paired_block_speedup_range": [
+              1.2491965761866852,
+              1.3512226555721105
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.07439885450003203,
+              "1": 0.0771028329982073,
+              "2": 0.07665072949748719
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.07605080566524218,
+            "mean_block_p95_seconds": 0.09993150256511095,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.008169125496351626,
+              "1": 0.00820233299600659,
+              "2": 0.008346958500624169
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.008239472330994127,
+            "mean_block_p95_seconds": 0.00863469819863288,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.1926996352107861,
+            "paired_block_speedup_range": [
+              1.1881299032866137,
+              1.2303105715239986
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.00839635400188854,
+              "1": 0.008655312507471535,
+              "2": 0.00853037500201026
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.008527347170456778,
+            "mean_block_p95_seconds": 0.01117070961408899,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.1625832385735535,
+            "paired_block_speedup_range": [
+              1.160421892323527,
+              1.1659217373648603
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.009743312999489717,
+              "1": 0.010091416996147018,
+              "2": 0.009917270996083971
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.009917333663906902,
+            "mean_block_p95_seconds": 0.011724996778502826,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.35312602099293144,
+              "1": 0.35325177099730354,
+              "2": 0.3629490204984904
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.35644227082957514,
+            "mean_block_p95_seconds": 0.36393609464964055,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.026792074043164516,
+            "paired_block_speedup_range": [
+              0.026083382136652542,
+              0.027354723443815534
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.3623965005026548,
+              "1": 0.36820070799876703,
+              "2": 0.3642234994986211
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3649402360000143,
+            "mean_block_p95_seconds": 0.4779544551856815,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.026106704915439375,
+            "paired_block_speedup_range": [
+              0.02599211201588519,
+              0.026244122544440227
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.009460978501010686,
+              "1": 0.009663104501669295,
+              "2": 0.009466937997785863
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.009530340333488615,
+            "mean_block_p95_seconds": 0.012222418151941382,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.13119566650129855,
+              "1": 0.13203441700170515,
+              "2": 0.1315784794933279
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.13160285433211052,
+            "mean_block_p95_seconds": 0.20224520811849894,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.0003640071277535,
+            "paired_block_speedup_range": [
+              0.9980085646662477,
+              1.0164120360234552
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.06053306299872929,
+              "1": 0.05918508349714102,
+              "2": 0.061885708004410844
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.06053461816676039,
+            "mean_block_p95_seconds": 0.09104652232999796,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 2.202909416773414,
+            "paired_block_speedup_range": [
+              2.1269268663508045,
+              2.2264305668299325
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.13334885450603906,
+              "1": 0.13177147899841657,
+              "2": 0.13162637499772245
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.13224890283405935,
+            "mean_block_p95_seconds": 0.20253779741372757,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.022741396001947578,
+              "1": 0.022825332991487812,
+              "2": 0.022817625002062414
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.022794784665165935,
+            "mean_block_p95_seconds": 0.023223920243860146,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9648015433860637,
+            "paired_block_speedup_range": [
+              0.9632356783637035,
+              0.9705639663233464
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.011231208001845516,
+              "1": 0.011179937493579928,
+              "2": 0.011474229504528921
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.011295124999984788,
+            "mean_block_p95_seconds": 0.26236838621941083,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.9652364643013698,
+            "paired_block_speedup_range": [
+              1.915488137032216,
+              1.9697709858516073
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.022071979503380135,
+              "1": 0.02202191649848828,
+              "2": 0.02197875049751019
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.02202421549979287,
+            "mean_block_p95_seconds": 0.022930346413340887,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.021899854502407834,
+              "1": 0.022138603999337647,
+              "2": 0.022102687500591855
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.02204704866744578,
+            "mean_block_p95_seconds": 0.02238016109840828,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9620841808503873,
+            "paired_block_speedup_range": [
+              0.9611717162085264,
+              0.9726215530916845
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.2817436670011375,
+              "1": 0.2866560420006863,
+              "2": 0.29085264600144
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2864174516677546,
+            "mean_block_p95_seconds": 0.30369914781452584,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.07423182100746847,
+            "paired_block_speedup_range": [
+              0.07311140638030753,
+              0.07560159461730805
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.021300270498613827,
+              "1": 0.02127900000050431,
+              "2": 0.021264645998599008
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.02128130549923905,
+            "mean_block_p95_seconds": 0.022188881831001102,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.09315622950089164,
+              "1": 0.09483233299397398,
+              "2": 0.09216514600120718
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.09338456949869094,
+            "mean_block_p95_seconds": 0.34040843798939024,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9714234754395135,
+            "paired_block_speedup_range": [
+              0.9667804878953731,
+              0.9960401679631988
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.04061747900414048,
+              "1": 0.0406613545055734,
+              "2": 0.0422152500032098
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.041164694504307896,
+            "mean_block_p95_seconds": 0.13067725556951093,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 2.2173120345106754,
+            "paired_block_speedup_range": [
+              2.1745740578680732,
+              2.2655997475051244
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.09006162500736536,
+              "1": 0.09212235450104345,
+              "2": 0.09180018750339514
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.09132805567060132,
+            "mean_block_p95_seconds": 0.3401579915441592,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.02242752050369745,
+              "1": 0.022696563006320503,
+              "2": 0.022560292003618088
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.022561458504545346,
+            "mean_block_p95_seconds": 0.023711937302869045,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9692490459724828,
+            "paired_block_speedup_range": [
+              0.9666937231903734,
+              0.9732666836175967
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.010959582999930717,
+              "1": 0.010889729499467649,
+              "2": 0.010949542003800161
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.010932951501066176,
+            "mean_block_p95_seconds": 0.011713703705512064,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.9970279573135057,
+            "paired_block_speedup_range": [
+              1.9916778314044667,
+              2.014799816402918
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.02182795850239927,
+              "1": 0.02194062499620486,
+              "2": 0.021866541501367465
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.02187837499999053,
+            "mean_block_p95_seconds": 0.022354278707158906,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.02182377099961741,
+              "1": 0.0220800835013506,
+              "2": 0.0219682914976147
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.02195738199952757,
+            "mean_block_p95_seconds": 0.02301585011421897,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.967067125107341,
+            "paired_block_speedup_range": [
+              0.9633096946437821,
+              0.970197794639107
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 2.9894724159967154,
+              "1": 2.985732957997243,
+              "2": 2.9763153750027413
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 2.9838402496655667,
+            "mean_block_p95_seconds": 3.0831228063519425,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.007123864992153427,
+            "paired_block_speedup_range": [
+              0.007082645881339678,
+              0.00713795744918286
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.02117337449453771,
+              "1": 0.021269958495395258,
+              "2": 0.021244812502118293
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.021229381830683753,
+            "mean_block_p95_seconds": 0.021698071296365622,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.04643012549786363,
+              "1": 0.04947918700054288,
+              "2": 0.0452278334996663
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04704571533269094,
+            "mean_block_p95_seconds": 0.07586381916626124,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.2558301957208402,
+            "paired_block_speedup_range": [
+              1.202806990165432,
+              1.3420179780632098
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.043115687505633105,
+              "1": 0.04337429149018135,
+              "2": 0.04356114600523142
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04335037500034863,
+            "mean_block_p95_seconds": 0.07245818739926714,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.3038793559080002,
+            "paired_block_speedup_range": [
+              1.2952705322347517,
+              1.530905894098845
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.05584647950308863,
+              "1": 0.06640195849468,
+              "2": 0.0567984789959155
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.059682305664561376,
+            "mean_block_p95_seconds": 0.09710519146901789,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.008097583500784822,
+              "1": 0.008626187503978144,
+              "2": 0.008270791498944163
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.008331520834569043,
+            "mean_block_p95_seconds": 0.008821241984211763,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.1771746385959838,
+            "paired_block_speedup_range": [
+              1.1350635483600102,
+              1.1856443962169465
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.007953874999657273,
+              "1": 0.008014521001314279,
+              "2": 0.007988833502167836
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.00798574316771313,
+            "mean_block_p95_seconds": 0.008296737617153363,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.2187218560795317,
+            "paired_block_speedup_range": [
+              1.2070663042879126,
+              1.221691351919668
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.009600854500604328,
+              "1": 0.009791270997084212,
+              "2": 0.00973616599367233
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.00970943049712029,
+            "mean_block_p95_seconds": 0.010929048212225703,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.353091853998194,
+              "1": 0.3621185415031505,
+              "2": 0.3598943960023462
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.35836826383456355,
+            "mean_block_p95_seconds": 0.36598234655612033,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.02603558878470932,
+            "paired_block_speedup_range": [
+              0.025992524335301526,
+              0.026310199172656343
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.3422019999998156,
+              "1": 0.34525535400462104,
+              "2": 0.34316322951053735
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.34354019450499135,
+            "mean_block_p95_seconds": 0.3492128017601014,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.027262068185504678,
+            "paired_block_speedup_range": [
+              0.027147465546490036,
+              0.027304972370155108
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.009289917004934978,
+              "1": 0.009412375002284534,
+              "2": 0.009370062500238419
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.009357451502485977,
+            "mean_block_p95_seconds": 0.010491854870391155,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.2792845420044614,
+              "1": 0.2846491874952335,
+              "2": 0.2891983125009574
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.28437734733355075,
+            "mean_block_p95_seconds": 1.1546089343552013,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9824221508048958,
+            "paired_block_speedup_range": [
+              0.9668440475612122,
+              1.0212985418047238
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.07903139600239228,
+              "1": 0.0859825829975307,
+              "2": 0.07838891650317237
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.08113429850103178,
+            "mean_block_p95_seconds": 0.30914247084632124,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 3.5669540986063035,
+            "paired_block_speedup_range": [
+              3.2523524794779006,
+              3.6091086571357356
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.28523289549775654,
+              "1": 0.27964566700393334,
+              "2": 0.27960966700629797
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.2814960765026626,
+            "mean_block_p95_seconds": 1.1555991165672215,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.04328737550531514,
+              "1": 0.043500042003870476,
+              "2": 0.04341902099986328
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.043402146169682965,
+            "mean_block_p95_seconds": 0.04504671458392598,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9702777988828201,
+            "paired_block_speedup_range": [
+              0.9682627460529236,
+              0.9753045664022154
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.013980270996398758,
+              "1": 0.014143000495096203,
+              "2": 0.013920228993811179
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.014014500161768714,
+            "mean_block_p95_seconds": 0.33399372301719266,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 3.0198538360791782,
+            "paired_block_speedup_range": [
+              2.9843119231636965,
+              3.0201385712080078
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.042218374997901265,
+              "1": 0.04220712500682566,
+              "2": 0.042041020504257176
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04215550683632804,
+            "mean_block_p95_seconds": 0.04475084524359166,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.04272810400289018,
+              "1": 0.04288433350302512,
+              "2": 0.0428349790017819
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04281580550256573,
+            "mean_block_p95_seconds": 0.0445518021825895,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9647051653491047,
+            "paired_block_speedup_range": [
+              0.9638630816748479,
+              0.9655711567200295
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.37517293749260716,
+              "1": 0.3782116459988174,
+              "2": 0.3732334790038294
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.37553935416508466,
+            "mean_block_p95_seconds": 0.3922985853168939,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.10977348812415519,
+            "paired_block_speedup_range": [
+              0.1094833433706929,
+              0.11071655632536505
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.04118404199834913,
+              "1": 0.04140787550568348,
+              "2": 0.041323125500639435
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04130501433489068,
+            "mean_block_p95_seconds": 0.044354766081475344,
+            "measured_requests": 300
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.34519035399716813,
+              "1": 0.3175221040000906,
+              "2": 0.34458139599883
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3357646179986962,
+            "mean_block_p95_seconds": 0.47599988083311473,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9585256009273806,
+            "paired_block_speedup_range": [
+              0.9403520830265982,
+              1.0331076699079202
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.08797714599495521,
+              "1": 0.0894169170060195,
+              "2": 0.09246124999481253
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.08995177099859575,
+            "mean_block_p95_seconds": 0.13141952867954387,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 3.668595742187251,
+            "paired_block_speedup_range": [
+              3.504471695092725,
+              3.7609061735015117
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.3308737914994708,
+              "1": 0.32803452100779396,
+              "2": 0.32402783349971287
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3276453820023259,
+            "mean_block_p95_seconds": 0.4832249556609895,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.042871208002907224,
+              "1": 0.04300172900548205,
+              "2": 0.04311508350656368
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04299600683831765,
+            "mean_block_p95_seconds": 0.04436794779976481,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9795424851388856,
+            "paired_block_speedup_range": [
+              0.9765317974622034,
+              0.9829435876048224
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.013876375000108965,
+              "1": 0.014368395502970088,
+              "2": 0.013886603992432356
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.014043791498503802,
+            "mean_block_p95_seconds": 0.014569436104405517,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 3.031932790575883,
+            "paired_block_speedup_range": [
+              2.931574404852076,
+              3.036814657934748
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.042139978999330197,
+              "1": 0.042122020495298784,
+              "2": 0.04210324999439763
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04212174982967554,
+            "mean_block_p95_seconds": 0.045251394535443974,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.04249889599304879,
+              "1": 0.042617271006747615,
+              "2": 0.0428223330018227
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.042646166667206366,
+            "mean_block_p95_seconds": 0.04417259196440379,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.9697041838151591,
+            "paired_block_speedup_range": [
+              0.9653500545978791,
+              0.9771116527519171
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 6.795613520996994,
+              "1": 6.897826270498626,
+              "2": 6.813357437502418
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 6.83559907633268,
+            "mean_block_p95_seconds": 6.9962639542677305,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.00606727914695631,
+            "paired_block_speedup_range": [
+              0.005991183943668718,
+              0.006110731043722947
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.04152616650389973,
+              "1": 0.04132614599802764,
+              "2": 0.041338541501318105
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04139695133441516,
+            "mean_block_p95_seconds": 0.0446425552322277,
+            "measured_requests": 300
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "source_edit"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.044913104495208245,
+              "1": 0.04451050000352552,
+              "2": 0.04477018749457784
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04473126399777053,
+            "mean_block_p95_seconds": 0.07593963750211212,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.282651831751241,
+            "paired_block_speedup_range": [
+              1.2507861042520179,
+              1.4028127294465789
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.04591470799641684,
+              "1": 0.04600349999964237,
+              "2": 0.04661625050357543
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04617815283321155,
+            "mean_block_p95_seconds": 0.07749669961291754,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.231857182365243,
+            "paired_block_speedup_range": [
+              1.2235009096825642,
+              1.3572857717230862
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.05617668700142531,
+              "1": 0.06243989599897759,
+              "2": 0.05742456299776677
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.05868038199938989,
+            "mean_block_p95_seconds": 0.10087700681130324,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "natural_next_line"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.008331603996339254,
+              "1": 0.008248646001447923,
+              "2": 0.008246208497439511
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.008275486165075563,
+            "mean_block_p95_seconds": 0.008795246618198386,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.177647218199003,
+            "paired_block_speedup_range": [
+              1.1534968540650556,
+              1.1924886818279339
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.0080537079993519,
+              "1": 0.008601999994425569,
+              "2": 0.00877029149705777
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.008475333163611746,
+            "mean_block_p95_seconds": 0.009174165652317849,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 1.1435034879686437,
+            "paired_block_speedup_range": [
+              1.1072749977530938,
+              1.1932986643998704
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.009610478999093175,
+              "1": 0.009836416997131892,
+              "2": 0.00971112449769862
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.00971934016464123,
+            "mean_block_p95_seconds": 0.011347544813664475,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "partial_accept"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.35357097949599847,
+              "1": 0.35687758349376963,
+              "2": 0.3588896249930258
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3564460626609313,
+            "mean_block_p95_seconds": 0.36579899158217205,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.026056350884910134,
+            "paired_block_speedup_range": [
+              0.025969030369479378,
+              0.02627301612487554
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.34896581250359304,
+              "1": 0.36166816650074907,
+              "2": 0.36587558300379897
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.3588365206693804,
+            "mean_block_p95_seconds": 0.37073075950247586,
+            "measured_requests": 300,
+            "paired_block_median_speedup_vs_stateless": 0.025925009094542487,
+            "paired_block_speedup_range": [
+              0.025558835932691898,
+              0.02631173362921795
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.009181895504298154,
+              "1": 0.009376250505738426,
+              "2": 0.009351353997772094
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.009303166669269558,
+            "mean_block_p95_seconds": 0.010671480573849597,
+            "measured_requests": 300
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "source_edit"
+      }
+    ],
+    "http_measured_traces": 8100,
+    "http_operation_rows": 24300,
+    "measured_repetitions_per_engine_http_group": 100,
+    "panel_cases": 36,
+    "panel_unique_files": 6,
+    "panel_unique_files_by_budget": {
+      "1024": 4,
+      "256": 4,
+      "512": 4
+    },
+    "restart": [
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.013106187492667232,
+              "1": 0.11497300000337418,
+              "2": 0.013240229498478584
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.047106472331506666,
+            "mean_block_p95_seconds": 0.04874849365417806,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9877598417455213,
+            "paired_block_speedup_range": [
+              0.11335560087594189,
+              8.333056738573076
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.20193472900427878,
+              "1": 0.20312097900023218,
+              "2": 0.30507433349703206
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.23671001383384768,
+            "mean_block_p95_seconds": 0.2432893442826753,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.06416291199481296,
+            "paired_block_speedup_range": [
+              0.04286878822016281,
+              0.5408411150538582
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.10921460400277283,
+              "1": 0.013032833499892149,
+              "2": 0.013078166994091589
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04510853483225219,
+            "mean_block_p95_seconds": 0.048553418600931764,
+            "measured_requests": 36
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.013016437500482425,
+              "1": 0.11160922900307924,
+              "2": 0.013209228993218858
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04594496516559351,
+            "mean_block_p95_seconds": 0.049283892397458354,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9856902698677392,
+            "paired_block_speedup_range": [
+              0.11644347973299708,
+              8.480035646835162
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.012913812504848465,
+              "1": 0.013037520999205299,
+              "2": 0.11554770799557446
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04716634716654274,
+            "mean_block_p95_seconds": 0.04911229727998337,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9968280776865225,
+            "paired_block_speedup_range": [
+              0.11268253362125835,
+              8.547425785952138
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.11037985399889294,
+              "1": 0.012996166995435487,
+              "2": 0.013020208491070662
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04546540982846636,
+            "mean_block_p95_seconds": 0.049050326400659594,
+            "measured_requests": 36
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 256,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.008374499499041121,
+              "1": 0.10697006199916359,
+              "2": 0.00853287499921862
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.041292478832474444,
+            "mean_block_p95_seconds": 0.04319001303495801,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9876239247052787,
+            "paired_block_speedup_range": [
+              0.077628420918572,
+              12.537010362417803
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.008344103502167854,
+              "1": 0.008553145504265558,
+              "2": 0.10701252100989223
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.041303256672108546,
+            "mean_block_p95_seconds": 0.042547449334476066,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9708611871989726,
+            "paired_block_speedup_range": [
+              0.07875033142120659,
+              12.582680328960903
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.10499118699954124,
+              "1": 0.008303916998556815,
+              "2": 0.008427271495747846
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0405741251646153,
+            "mean_block_p95_seconds": 0.04116798740166511,
+            "measured_requests": 36
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.021309396004653536,
+              "1": 0.11877777049812721,
+              "2": 0.021227145989541896
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.05377143749744088,
+            "mean_block_p95_seconds": 0.05677127160185288,
+            "measured_requests": 30,
+            "paired_block_median_speedup_vs_stateless": 0.9942771869469128,
+            "paired_block_speedup_range": [
+              0.17676761328109095,
+              5.568388727141993
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.2416850000008708,
+              "1": 0.24016354149352992,
+              "2": 0.34315939599764533
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.275002645830682,
+            "mean_block_p95_seconds": 0.2891629327035237,
+            "measured_requests": 30,
+            "paired_block_median_speedup_vs_stateless": 0.08742402311038856,
+            "paired_block_speedup_range": [
+              0.061503975259176585,
+              0.4909655150054404
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.11865900049451739,
+              "1": 0.020996063001803122,
+              "2": 0.021105667001393158
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.053586910165904555,
+            "mean_block_p95_seconds": 0.05907544380170293,
+            "measured_requests": 30
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.021274541999446228,
+              "1": 0.12449654200463556,
+              "2": 0.021304125009919517
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.05569173633800043,
+            "mean_block_p95_seconds": 0.056383247196208686,
+            "measured_requests": 27,
+            "paired_block_median_speedup_vs_stateless": 0.9716447390716098,
+            "paired_block_speedup_range": [
+              0.16740959752199935,
+              5.562003826037034
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.02110945798631292,
+              "1": 0.02134495800419245,
+              "2": 0.12440658400009852
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.0556203333302013,
+            "mean_block_p95_seconds": 0.05766636359912809,
+            "measured_requests": 27,
+            "paired_block_median_speedup_vs_stateless": 0.9764327475267499,
+            "paired_block_speedup_range": [
+              0.16639023692183214,
+              5.605500817445357
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.11832908399810549,
+              "1": 0.020841915989876725,
+              "2": 0.020700040986412205
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.05329034699146481,
+            "mean_block_p95_seconds": 0.0553884862010212,
+            "measured_requests": 27
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 512,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.008319125001435168,
+              "1": 0.10541249999369029,
+              "2": 0.008385499997530133
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.040705708330885194,
+            "mean_block_p95_seconds": 0.04223967813207613,
+            "measured_requests": 27,
+            "paired_block_median_speedup_vs_stateless": 1.0258481910606236,
+            "paired_block_speedup_range": [
+              0.07667892331801038,
+              12.70035910994813
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.008295999999972992,
+              "1": 0.008398500009207055,
+              "2": 0.10711762499704491
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04127070833540832,
+            "mean_block_p95_seconds": 0.0420324195350986,
+            "measured_requests": 27,
+            "paired_block_median_speedup_vs_stateless": 0.9624238846121161,
+            "paired_block_speedup_range": [
+              0.08030657890186103,
+              12.73576121011552
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.10565587499877438,
+              "1": 0.008082917003775947,
+              "2": 0.00860225000360515
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04078034733538516,
+            "mean_block_p95_seconds": 0.042628914069306724,
+            "measured_requests": 27
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.041497104000882246,
+              "1": 0.14456808350223582,
+              "2": 0.04141887499281438
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.07582802083197748,
+            "mean_block_p95_seconds": 0.07777114079508465,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9902515219183198,
+            "paired_block_speedup_range": [
+              0.2836800662119733,
+              3.29927841470421
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.3194440625011339,
+              "1": 0.3216001664986834,
+              "2": 0.4245250420062803
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.35518975700203254,
+            "mean_block_p95_seconds": 0.3761912992153763,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.12752195978797864,
+            "paired_block_speedup_range": [
+              0.09661409796685755,
+              0.4285899021909682
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.1369104995028465,
+              "1": 0.04101108350005234,
+              "2": 0.04101510399777908
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.07297889566689264,
+            "mean_block_p95_seconds": 0.0845610853684775,
+            "measured_requests": 36
+          }
+        },
+        "regime": "after_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.0414298744944972,
+              "1": 0.144001250002475,
+              "2": 0.041601771001296584
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.07567763183275626,
+            "mean_block_p95_seconds": 0.07869067723780365,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9851403561732798,
+            "paired_block_speedup_range": [
+              0.28451156500061087,
+              3.357172359282186
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.04134270799841033,
+              "1": 0.04137593799532624,
+              "2": 0.1430785630000173
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.07526573633125129,
+            "mean_block_p95_seconds": 0.07834511938369057,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9901895397483506,
+            "paired_block_speedup_range": [
+              0.2864411176791843,
+              3.3642505833629492
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.13908722950145602,
+              "1": 0.04097002100024838,
+              "2": 0.04098358350165654
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.07368027800112031,
+            "mean_block_p95_seconds": 0.08387027136705,
+            "measured_requests": 36
+          }
+        },
+        "regime": "at_capacity",
+        "workload": "restart_replay"
+      },
+      {
+        "budget": 1024,
+        "policies": {
+          "exact": {
+            "block_p50_seconds": {
+              "0": 0.008361082996998448,
+              "1": 0.10545924999314593,
+              "2": 0.008401771003264003
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04074070133113613,
+            "mean_block_p95_seconds": 0.04698877765040378,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 1.006642944169834,
+            "paired_block_speedup_range": [
+              0.07720833407527046,
+              12.635489270359027
+            ]
+          },
+          "sink": {
+            "block_p50_seconds": {
+              "0": 0.008418479497777298,
+              "1": 0.008403208499657921,
+              "2": 0.10727833349665161
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.04136667383136228,
+            "mean_block_p95_seconds": 0.042251531965303006,
+            "measured_requests": 36,
+            "paired_block_median_speedup_vs_stateless": 0.9689552514530293,
+            "paired_block_speedup_range": [
+              0.07883775990265914,
+              12.549341543808314
+            ]
+          },
+          "stateless": {
+            "block_p50_seconds": {
+              "0": 0.1056463744971552,
+              "1": 0.008142333004798274,
+              "2": 0.008457583498966414
+            },
+            "blocks": 3,
+            "mean_block_p50_seconds": 0.040748763666973296,
+            "mean_block_p95_seconds": 0.04782132655066865,
+            "measured_requests": 36
+          }
+        },
+        "regime": "before_capacity",
+        "workload": "restart_replay"
+      }
+    ],
+    "warmups_per_engine_http_group": 20
+  },
+  "configuration": {
+    "data": {
+      "clone_threshold": 0.9,
+      "minhash_permutations": 128,
+      "seed": 42,
+      "shingle_size": 5,
+      "training_files": 5000,
+      "validation_files": 1000,
+      "vocab_size": 8192
+    },
+    "model": {
+      "context_length": 1024,
+      "dropout": 0.1,
+      "ff_width": 1536,
+      "heads": 8,
+      "layers": 8,
+      "norm_eps": 1e-05,
+      "rope_base": 10000.0,
+      "vocab_size": 8192,
+      "width": 512
+    },
+    "service": {
+      "budgets": [
+        256,
+        512,
+        1024
+      ],
+      "deadline_seconds": 120.0,
+      "host": "127.0.0.1",
+      "max_new_tokens": 64,
+      "max_sessions": 4,
+      "max_source_bytes": 1048576,
+      "port": 8000,
+      "queue_size": 8,
+      "sink_tokens": 4
+    },
+    "training": {
+      "accumulation_steps": 8,
+      "batch_size": 4,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "checkpoint_interval": 100,
+      "cpu_threads": 6,
+      "eps": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.0003,
+      "max_epochs": 15,
+      "min_delta": 0.0001,
+      "min_epochs": 5,
+      "min_learning_rate": 3e-05,
+      "num_workers": 0,
+      "patience": 3,
+      "prefer_metal": true,
+      "seed": 42,
+      "validation_batch_size": 16,
+      "warmup_fraction": 0.05,
+      "weight_decay": 0.1
+    }
+  },
+  "correctness": {
+    "acceptance": {
+      "aggregate_receipt": "evidence/acceptance.json",
+      "counts": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 194
+      },
+      "returncode": 0,
+      "status": "passed"
+    },
+    "restart_greedy_matches": 900,
+    "restart_measured_checks": 900,
+    "restart_replay_passed": true,
+    "runtime_validation": {
+      "aggregate_receipt": "evidence/runtime_validation.json",
+      "status": "passed"
+    },
+    "trained_parity": {
+      "atol": 0.0003,
+      "cases": 36,
+      "exact_max_abs_logit_delta": 2.288818359375e-05,
+      "greedy_disagreements": 0,
+      "qualified": {
+        "exact": true,
+        "sink": true,
+        "stateless": true
+      },
+      "rtol": 0,
+      "sink_reference_greedy_disagreements": 0,
+      "sink_reference_max_abs_logit_delta": 1.239776611328125e-05
+    }
+  },
+  "data": {
+    "parent_cache_id": "0bf59e5e72e3d42dfba262a3c26f2f169e869e504053c86e3a7d8465b6beafc7",
+    "preparation_mode": "subset_view",
+    "repositories_by_split": {
+      "test": 785,
+      "train": 1932,
+      "validation": 345
+    },
+    "selected_counts": {
+      "test": 15937,
+      "train": 5000,
+      "validation": 1000
+    }
+  },
+  "distribution": {
+    "aggregate_metrics_unchanged": true,
+    "case_texts_included": false,
+    "dataset_included": false,
+    "model_weights_included": false,
+    "original_source_snapshot_hash": "f14ab1aa7b9b9132161ed7c20ef466f88f9e9c2a61bb01839c2a92b42f048c47",
+    "session_records_included": false
+  },
+  "evidence": {
+    "architecture": "architecture.json",
+    "configuration": "configuration.json",
+    "correctness": "evidence/correctness.json",
+    "data_audit": "evidence/data_audit.json",
+    "engine_blocks": "tables/engine_summary.csv",
+    "http_blocks": "tables/http_summary.csv",
+    "line_metrics": "metrics/line.json",
+    "restart_blocks": "tables/restart_summary.csv",
+    "runtime": "evidence/environment.json",
+    "startup_measurements": "tables/startup_measurements.csv",
+    "streaming_metrics": "metrics/streaming.json",
+    "token_metrics": "metrics/token.json",
+    "training_epochs": "tables/epochs.csv",
+    "training_performance": "evidence/training_timing.json",
+    "training_status": "evidence/training_status.json"
+  },
+  "identities": {
+    "benchmark_panel_hash": "1b92f4b3fc6dea8977b7966bd48c052c26e952277b4c318bc8bf1b7487069e1e",
+    "encoded_cache_id": "c869742fd56b0b090a73b2f30cdbd3676f1e932a97d51c4b19a3d5a7e38cb1ce",
+    "frozen_receipt_hash": "71d61c169c9d8d61aaa46ad4a9a23942c9dded41fccf87a7c16de73cbb7af548",
+    "line_panel_hash": "bfa39e98d6c605b791780533158078dd9d61c045315a853e558790233e91c9f9",
+    "prepared_cache_id": "8fd43d116d66d7c67547b3ed24f26a970c3c2d74514be1251b563ff0a97171b2",
+    "run": {
+      "config_hash": "85766ce6996d314050eb1a28d42c5ea404c3776d4656897d6979885712945633",
+      "environment_hash": "ddf4858df8d48c18a5353b712480f649ac1164110d31877ebe2ba908d92cafbf",
+      "notebook_snapshot_hash": "870274137ffc1302f60c6d753b226fd80fa97df7830346e88ced2a102c3770ee",
+      "run": "run_001",
+      "runs_directory": "runs",
+      "schema": 1,
+      "source_hash": "f14ab1aa7b9b9132161ed7c20ef466f88f9e9c2a61bb01839c2a92b42f048c47"
+    },
+    "selected_weights_sha256": "7b6dc503a3e6820cd0ff82dd80b0565f97bae8f9f876cdf62fa2012c96416825",
+    "streaming_panel_hash": "3297507a9d75b9e75aed36f849ddf5628090d80859ca1a83b186ff928e71c8e2",
+    "tokenizer_cache_id": "78d0032ae0e50caea5c64b1b7f4185147325a4b088332171fb58d247c0b67263",
+    "tokenizer_sha256": "6dd342eb6a1ddf9bf523954d320c5e81b41752d123a369485a9cf6c6a173b354"
+  },
+  "limitations": [
+    "Single scratch-trained model and seed; no long-term convergence equivalence from tuning.",
+    "Only six unique validation files in repeated timing panel.",
+    "Sink differs semantically from stateless after eviction.",
+    "Severe sequential suffix/edit rebuild regressions are observed in the frozen implementation.",
+    "Engine setup and HTTP initial source setup excluded from request timing.",
+    "Memory samples are not peaks and unified-memory counters overlap.",
+    "No generated Python was executed; text prediction scores are not functional correctness."
+  ],
+  "memory": {
+    "definition": "Post-request snapshots, not peaks; RSS and device allocations overlap.",
+    "engine_snapshots": {
+      "allocated_bytes": {
+        "largest_observed_snapshot": 195069952,
+        "median": 144738304.0
+      },
+      "driver_allocated_bytes": {
+        "largest_observed_snapshot": 1193000960,
+        "median": 1192984576.0
+      },
+      "rss_bytes": {
+        "largest_observed_snapshot": 1571651584,
+        "median": 550830080.0
+      }
+    },
+    "retained_kv_bytes_per_cache": {
+      "1024": 33554432,
+      "256": 8388608,
+      "512": 16777216
+    }
+  },
+  "next_line_completion": {
+    "cases": 5000,
+    "failure_label_audit_status": "Original heuristic labels retained as reported; validation-only model/prefix audit does not validate classifier labels.",
+    "metrics": {
+      "baseline_edit_similarity": 0.291588562184432,
+      "baseline_exact_match": 0.0004,
+      "edit_similarity": 0.0967062761645802,
+      "exact_match": 0.0174
+    },
+    "observed_output_distribution": {
+      "closing_delimiter_exact_matches": 56,
+      "empty_or_newline_only_predictions": 3288,
+      "empty_predictions": 1342,
+      "mean_generated_tokens": 3.5888,
+      "median_generated_tokens": 1.0,
+      "newline_only_predictions": 1946
+    },
+    "recorded_overlapping_failure_labels": {
+      "empty_suggestion": 1342,
+      "identifier_mismatch": 609,
+      "indentation_mismatch": 4032,
+      "other_text_mismatch": 622,
+      "premature_eos": 1342,
+      "repetitive_output": 34,
+      "truncation": 61
+    }
+  },
+  "schema": 1,
+  "scope": "Portable aggregate export of completed run_001 and its post-run validation-only audit. No new model execution, training, held-out scoring or performance measurement.",
+  "startup": {
+    "definition": "Fresh worker/model process; operating-system file cache is not cleared.",
+    "load_seconds": {
+      "median_seconds": 0.9415503125055693,
+      "p95_seconds": 0.9937740476059844
+    },
+    "measured_restarts": 300,
+    "startup_seconds": {
+      "median_seconds": 1.7594743329973426,
+      "p95_seconds": 1.971661104141822
+    }
+  },
+  "streaming_quality": {
+    "files": 128,
+    "groups": [
+      {
+        "accuracy": 0.6220703125,
+        "budget": 256,
+        "cross_entropy": 2.013517749695459,
+        "perplexity": 7.489617661484677,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "stateless",
+        "tokens": 1024
+      },
+      {
+        "accuracy": 0.5899564224942935,
+        "budget": 256,
+        "cross_entropy": 2.1782276917234054,
+        "perplexity": 8.830641762179976,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "stateless",
+        "tokens": 9638
+      },
+      {
+        "accuracy": 0.6220703125,
+        "budget": 256,
+        "cross_entropy": 2.0135177892338794,
+        "perplexity": 7.489617957612335,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "exact",
+        "tokens": 1024
+      },
+      {
+        "accuracy": 0.5899564224942935,
+        "budget": 256,
+        "cross_entropy": 2.1782276917234054,
+        "perplexity": 8.830641762179976,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "exact",
+        "tokens": 9638
+      },
+      {
+        "accuracy": 0.6220703125,
+        "budget": 256,
+        "cross_entropy": 2.0135177892338794,
+        "perplexity": 7.489617957612335,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "sink",
+        "tokens": 1024
+      },
+      {
+        "accuracy": 0.5930691014733347,
+        "budget": 256,
+        "cross_entropy": 2.1776578336594663,
+        "perplexity": 8.825610983313133,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "sink",
+        "tokens": 9638
+      },
+      {
+        "accuracy": 0.61376953125,
+        "budget": 512,
+        "cross_entropy": 2.0775012489492157,
+        "perplexity": 7.984492707363697,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "stateless",
+        "tokens": 2048
+      },
+      {
+        "accuracy": 0.6146970048757836,
+        "budget": 512,
+        "cross_entropy": 2.0508897845923766,
+        "perplexity": 7.774815940926705,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "stateless",
+        "tokens": 8614
+      },
+      {
+        "accuracy": 0.61376953125,
+        "budget": 512,
+        "cross_entropy": 2.0775012745319446,
+        "perplexity": 7.984492911628811,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "exact",
+        "tokens": 2048
+      },
+      {
+        "accuracy": 0.6146970048757836,
+        "budget": 512,
+        "cross_entropy": 2.0508897845923766,
+        "perplexity": 7.774815940926705,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "exact",
+        "tokens": 8614
+      },
+      {
+        "accuracy": 0.61376953125,
+        "budget": 512,
+        "cross_entropy": 2.0775012745319446,
+        "perplexity": 7.984492911628811,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "sink",
+        "tokens": 2048
+      },
+      {
+        "accuracy": 0.6160900859066636,
+        "budget": 512,
+        "cross_entropy": 2.0465197751287154,
+        "perplexity": 7.740914051427571,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "sink",
+        "tokens": 8614
+      },
+      {
+        "accuracy": 0.62451171875,
+        "budget": 1024,
+        "cross_entropy": 1.9931876160179833,
+        "perplexity": 7.338890080620831,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "stateless",
+        "tokens": 4096
+      },
+      {
+        "accuracy": 0.6218397806883947,
+        "budget": 1024,
+        "cross_entropy": 1.999642390538157,
+        "perplexity": 7.386414174972242,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "stateless",
+        "tokens": 6566
+      },
+      {
+        "accuracy": 0.62451171875,
+        "budget": 1024,
+        "cross_entropy": 1.9931876118630527,
+        "perplexity": 7.338890050128252,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "exact",
+        "tokens": 4096
+      },
+      {
+        "accuracy": 0.6218397806883947,
+        "budget": 1024,
+        "cross_entropy": 1.999642390538157,
+        "perplexity": 7.386414174972242,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "exact",
+        "tokens": 6566
+      },
+      {
+        "accuracy": 0.62451171875,
+        "budget": 1024,
+        "cross_entropy": 1.9931876118630527,
+        "perplexity": 7.338890050128252,
+        "perplexity_overflow": false,
+        "phase": "before_capacity",
+        "policy": "sink",
+        "tokens": 4096
+      },
+      {
+        "accuracy": 0.6155954919281146,
+        "budget": 1024,
+        "cross_entropy": 2.024826201900823,
+        "perplexity": 7.574794345370054,
+        "perplexity_overflow": false,
+        "phase": "after_capacity",
+        "policy": "sink",
+        "tokens": 6566
+      }
+    ],
+    "sink_loss_deltas": [
+      {
+        "budget": 256,
+        "mean_delta_from_stateless": 3.9538420537610364e-08,
+        "phase": "before_capacity",
+        "positions": 1024
+      },
+      {
+        "budget": 256,
+        "mean_delta_from_stateless": -0.0005698580639389334,
+        "phase": "after_capacity",
+        "positions": 9638
+      },
+      {
+        "budget": 512,
+        "mean_delta_from_stateless": 2.558272882424717e-08,
+        "phase": "before_capacity",
+        "positions": 2048
+      },
+      {
+        "budget": 512,
+        "mean_delta_from_stateless": -0.004370009463661468,
+        "phase": "after_capacity",
+        "positions": 8614
+      },
+      {
+        "budget": 1024,
+        "mean_delta_from_stateless": -4.154930621780295e-09,
+        "phase": "before_capacity",
+        "positions": 4096
+      },
+      {
+        "budget": 1024,
+        "mean_delta_from_stateless": 0.025183811362666283,
+        "phase": "after_capacity",
+        "positions": 6566
+      }
+    ]
+  },
+  "token_prediction": {
+    "model": {
+      "accuracy": 0.6003997975953604,
+      "cross_entropy": 2.13496112896387,
+      "perplexity": 8.456717779090269,
+      "perplexity_overflow": false,
+      "tokens": 23744515
+    },
+    "token_frequency_baseline": {
+      "accuracy": 0.05253225850264787,
+      "cross_entropy": 6.857740810634127,
+      "perplexity": 951.215661881924,
+      "perplexity_overflow": false,
+      "tokens": 23744515
+    },
+    "windows": 32742
+  },
+  "training": {
+    "best_epoch": 9,
+    "best_validation_nll": 2.1404153043704133,
+    "checkpoint_seconds": 47.849518540991994,
+    "completed_epochs": 12,
+    "epoch_wall_seconds": [
+      4090.4733991659978,
+      4187.918562957999,
+      4093.882838499998,
+      4235.146063750002,
+      4166.535438708997,
+      4133.878918290997,
+      4193.899218166996,
+      4083.3819199169957,
+      4089.9624317500056,
+      4099.889373167003,
+      4097.154893083003,
+      4098.376245459003
+    ],
+    "execution": {
+      "actual_cpu_threads": 6,
+      "actual_interop_threads": 10,
+      "cpu_fallback": false,
+      "fast_math": false,
+      "num_workers": 0,
+      "prefer_metal": true,
+      "requested_cpu_threads": 6,
+      "validation_batch_size": 16,
+      "worker_cpu_threads": null
+    },
+    "invocation_wall_seconds": 49571.677610791,
+    "status": "complete",
+    "stop_reason": "early_stopping",
+    "training_runtime": {
+      "cpu_threads": 6,
+      "cuda_tf32_matmul": false,
+      "cudnn_tf32": true,
+      "default_dtype": "torch.float32",
+      "deterministic_algorithms": false,
+      "device": "mps",
+      "device_name": "arm",
+      "interop_threads": 10,
+      "machine": "arm64",
+      "mps_fallback": "0",
+      "mps_fast_math": "0",
+      "mps_prefer_metal": "1",
+      "torch": "2.14.0"
+    },
+    "training_update_seconds": 48550.71947699812,
+    "updates": 4092,
+    "validation_seconds": 936.6858283330075
+  },
+  "validation_audit": {
+    "canonical_backend": "mps",
+    "case_count": 64,
+    "case_manifest_sha256": "8a1b4767d0843d3023f2b84cfcc239c70f8ca852b791856dd25a5f71f255b4f6",
+    "crossing_boundary": {
+      "cases": 46,
+      "empty_eos": 19,
+      "exact_line_matches": 0,
+      "mean_prompt_eos_probability": 0.32717044277660534,
+      "mean_teacher_first_target_probability": 0.6470902479334694,
+      "newline_only": 14,
+      "teacher_first_token_correct": 32,
+      "whitespace_only_nonempty": 14
+    },
+    "device_confirmation": {
+      "case_lists_identical": true,
+      "exact_teacher_context_cases": 8,
+      "newline_only_among_exact_teacher_context_cases": 4,
+      "original_receipt_sha256": "ed26475f71a9a3c44ed3fa3ae8d47b88258316e28804c86eac2eb32527be15ef",
+      "paired_cases": 64,
+      "path": "evidence/device_confirmation.json",
+      "public_receipt_sha256": "fa4b7e89a737855bd6d826b79dd69ea21b4a761fbfd998edcc88176cb4ce56f3",
+      "scope": "Same cases on CPU and MPS; not an independent additional sample."
+    },
+    "distinct_validation_files": 64,
+    "exact_boundary": {
+      "cases": 18,
+      "empty_eos": 0,
+      "exact_line_matches": 0,
+      "mean_prompt_eos_probability": 0.024451621420464816,
+      "mean_teacher_first_target_probability": 0.31848510201234603,
+      "newline_only": 13,
+      "teacher_first_token_correct": 7,
+      "whitespace_only_nonempty": 13
+    },
+    "explanation": "README.md#scope-reproducibility-and-validation-audit",
+    "limitations": [
+      "Only 64 deterministic validation cases; not a new held-out estimate or a significance test",
+      "Teacher-forced and deployment contexts can differ at BPE boundaries; their probabilities are descriptive, not a controlled decoding fix",
+      "Validation data already contributed to checkpoint selection",
+      "No settings changed and no generated source executed; this audit alone cannot establish a quality remedy",
+      "Project accelerator lease excludes cooperating project jobs, not unrelated applications"
+    ],
+    "overall": {
+      "cases": 64,
+      "empty_eos": 19,
+      "exact_line_matches": 0,
+      "mean_prompt_eos_probability": 0.24203077427019082,
+      "mean_teacher_first_target_probability": 0.5546700506431534,
+      "newline_only": 27,
+      "teacher_first_token_correct": 39,
+      "whitespace_only_nonempty": 27
+    },
+    "prompt_tail_retokenized_cases": 56,
+    "protocol_hash": "a0bcf5f75158ff749e1524665e8b3e2707b0a289888bfa30ce902ddc9e7d6068",
+    "receipt": "metrics/validation_audit.json",
+    "receipt_sha256": "c985a9b50edcf95ce006e24de9913cd46934d5a7c910958caa71a3105491ba4e",
+    "rows_sha256": "62f8b81da381053f90d76dcdabb78e1db57a95d00590812ad55d56fd87868eba",
+    "scope": "Post-run validation-only descriptive diagnosis; does not modify held-out metrics or validate failure-classifier labels. Association is not causation; no quality fix was tested.",
+    "status": "complete",
+    "stopping_decoder_checks_passed": 64,
+    "tokenizer_roundtrip_checks_passed": 128,
+    "wall_seconds_including_model_load": 9.649032707995502
+  }
+}

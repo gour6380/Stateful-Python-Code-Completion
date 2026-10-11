@@ -1,0 +1,21 @@
+# Direct dependencies; requirements.txt is the resolved, hashed environment lock.
+torch
+tokenizers>=0.21,<1
+safetensors
+tensorboard
+tqdm
+numpy
+pandas
+matplotlib
+datasketch
+rapidfuzz
+psutil
+fastapi
+pydantic
+uvicorn
+httpx
+jupyterlab
+ipykernel
+ipywidgets
+pytest
+ruff

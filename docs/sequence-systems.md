@@ -1,0 +1,36 @@
+# Sequence Systems: architecture, learning, and continuous inference
+
+These experiments ask how model structure, optimization history, and retained inference state affect useful predictions and operating cost. The sequence studies move from source-order sensitivity in translation, through controlled temporal-memory tasks, to an editor-aware code-completion service. Two supporting studies examine capacity allocation and numerical regularization.
+
+Each project has its own data, configuration, environment, and learned parameters. **Stateful Python Code Completion runs independently:** it does not load a checkpoint, tokenizer, or dataset from the earlier projects. The connection is a progression of experimental questions and engineering decisions. Metrics across these tasks do not form a combined benchmark or a common architecture ranking.
+
+## Three connected questions
+
+| Question | Evidence | What the result supports | Main limit |
+|---|---|---|---|
+| How does a model represent source order? | [Attention and Source Order](https://github.com/gour6380/Attention-Source-Order) compares seven French→English systems. Adding fixed source positions to the token-wise MLP encoder raised test chrF++ from **58.75 to 64.02**, with **2,352,832 parameters** in both variants. | Explicit position information helped this architecture under its registered training and selection policy. | One seed, short filtered sentences, different selected epochs, and previously inspected test data. This is not evidence of general long-memory ability. |
+| Does learning a temporal task mean retaining that performance? | [Gradient Flow and Temporal Memory](https://github.com/gour6380/Gradient-Flow-and-Temporal-Memory) compares recurrent cells, clipping, and backward horizons across **72 fits**. All six truncated RNN fits on lag-16 copying learned almost perfectly, then fell to roughly **10% final token accuracy**; full backpropagation retained **100%**. | Training trajectories and validation-selected checkpoints expose failures hidden by a single endpoint or a successful early epoch. | Three training seeds on one fixed synthetic dataset realization. Diagnostic correlations do not identify a unique cause of collapse. |
+| What changes when source text grows, is edited, and survives a service restart? | [Stateful Python Code Completion](../README.md) compares stateless recomputation, exact prefix reuse, and bounded sink-plus-recent caching. At a **1,024-position budget**, sink caching gave approximately **4× faster warm 32-token continuation after capacity**, with **2.55% higher streaming perplexity**. | Cache policy is a quality, latency, and state-correctness decision that depends on the operation being measured. | One seed and one M2 Pro; timing cases draw from six distinct validation files. Setup is outside the direct continuation timer. Weak line completions and slow edit paths remain recorded failures. |
+
+The source-order study also retained a negative optimization result: no buffered generation path passed both the required correctness and speed gates. The temporal-memory study distinguishes forward state carry from the length of the backward training graph. The service study then distinguishes exact cached reuse from approximate history retention, with explicit accept/reject, revision checking, edit invalidation, and replay after restart.
+
+These mechanisms should stay separate. A detached recurrent graph can preserve forward state values while changing learning; a sink cache can preserve states influenced by discarded context while changing attention semantics. Neither a device-memory measurement nor an allocated cache size proves that useful information is retained.
+
+## Supporting capacity studies
+
+| Study | Observed result | Why it belongs here | Boundary |
+|---|---|---|---|
+| [Width vs Depth on EuroSAT](https://github.com/gour6380/Eurosat-Width-Depth) | With parameter spread below **0.81%**, the middle CNN reached **91.67%** test accuracy in **14.57 minutes** of recorded epoch time; deep/narrow reached **89.70%** in **30.86 minutes**. | Equal parameter counts do not establish equal compute cost or prediction quality. Measure the model shape that actually runs. | A separate image-classification task: one seed, one spatial split, and one recipe. Recorded fit times include training/validation epoch work; limited forward-only inference measurements do not establish deployment latency. |
+| [Random-Feature Double Descent](https://github.com/gour6380/Random-Feature-Double-Descent) | At **8,192 features** with noisy training labels, minimum-norm mean clean-target test MSE was **5.00435**, versus **0.98713** for predicting zero and **0.03012** for fixed ridge. Error declined after interpolation but remained worse than the simple baseline. | Capacity curves need a meaningful baseline and numerical-conditioning checks before they justify a model choice. | A separate CPU float64 linear-coefficient study with fixed random features, ten feature seeds, and one dataset/noise realization. It is not evidence about learned neural representations or language-model scaling. |
+
+## Read the evidence
+
+1. **Architecture and source order:** [translation technical report](https://github.com/gour6380/Attention-Source-Order/blob/bcecb24fe184e6db42da32b91d3d942699cc4ed1/results/run_001/TECHNICAL_REPORT.md), with [EuroSAT's matched-capacity report](https://github.com/gour6380/Eurosat-Width-Depth/blob/e0105e75eca0425f148c219daf62d6f88320616a/docs/technical_report.md) as a separate supporting comparison.
+2. **Learning dynamics:** [temporal-memory technical report](https://github.com/gour6380/Gradient-Flow-and-Temporal-Memory/blob/a45ec32f776351468aa73684bc089940b8faf007/docs/technical_report.md), with the separate [random-feature report](https://github.com/gour6380/Random-Feature-Double-Descent/blob/501d2ad33ca1763516c95ac2a0f551f24c33fdab/results/run_001/technical_report.md).
+3. **Continuous inference:** [code-completion findings and measurements](../reports/run_001/README.md) and [setup and execution instructions](../README.md). This report separates teacher-forced prediction, generated completions, cache semantics, direct-engine timings, and HTTP lifecycle costs.
+
+The earlier report links are pinned to recorded public commits so their evidence remains identifiable as repositories evolve. Follow each repository's own setup instructions for reproduction; no cross-project dependency installation is needed.
+
+## Operational conclusion
+
+Choose an architecture and state policy using **task quality, training stability, and the actual request lifecycle together**. In these experiments, more depth did not guarantee better accuracy, numerical interpolation did not guarantee useful generalization, successful learning did not guarantee a stable final model, and faster cached continuation did not guarantee a faster editing session. A practical service therefore needs correctness gates and measurements for edits, cancellation, acceptance, and restart alongside its steady continuation timing. The code-completion result supplies that bounded systems evidence; its **1.74% exact-line match and 65.76% blank/empty suggestions** do not support a claim of production-quality code assistance.

@@ -1,0 +1,15 @@
+{
+  "bad_epochs": 3,
+  "best_checkpoint": "update_00003069_6e09fcdea50d40b4a308d21ab0297fcf.pt",
+  "best_epoch": 9,
+  "best_validation_nll": 2.1404153043704133,
+  "epoch": 12,
+  "epoch_loss_sum": 0.0,
+  "epoch_target_tokens": 0,
+  "epoch_training_seconds": 0.0,
+  "next_batch": 0,
+  "patience_anchor_nll": 2.1404153043704133,
+  "status": "complete",
+  "stop_reason": "early_stopping",
+  "updates": 4092
+}
